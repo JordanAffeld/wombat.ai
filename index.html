@@ -290,20 +290,17 @@
     .hero-image {
       position: absolute;
       right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40%;
-      max-width: 500px;
-      height: 400px;
+      top: 0;
+      width: 60%;
+      height: 100%;
     }
     
     #particles-container {
       width: 100%;
       height: 100%;
-      border-radius: 8px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-      border: 1px solid var(--border-color);
-      background-color: rgba(26, 30, 43, 0.8);
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
     }
 
     .platform-logos {
@@ -1551,11 +1548,7 @@
           value: ["#ffffff", "#00e676", "#9c27b0", "#2979ff", "#ff1744"]
         },
         links: {
-          color: "#ffffff",
-          distance: 150,
-          enable: true,
-          opacity: 0.5,
-          width: 1
+          enable: false
         },
         collisions: {
           enable: true
@@ -1563,38 +1556,43 @@
         move: {
           direction: "none",
           enable: true,
-          outMode: "bounce",
-          random: false,
-          speed: 2,
+          outMode: "out",
+          random: true,
+          speed: 1.5,
           straight: false
         },
         number: {
           density: {
             enable: true,
-            value_area: 800
+            value_area: 400
           },
-          value: 80
+          value: 200
         },
         opacity: {
-          value: 0.8
+          value: 0.8,
+          animation: {
+            enable: true,
+            minimumValue: 0,
+            speed: 0.2,
+            startValue: "max",
+            destroy: "min"
+          }
         },
         shape: {
           type: ["circle", "character"],
           character: {
             value: ["¥", "₩", "₹", "₱", "元", "S$", "A$", "HK$", "中文", "한국어", "日本語", "ไทย", "Tiếng Việt"]
-          },
-          options: {
-            character: {
-              value: ["¥", "₩", "₹", "₱", "元", "S$", "A$", "HK$", "中文", "한국어", "日本語", "ไทย", "Tiếng Việt"],
-              font: "Montserrat",
-              style: "",
-              weight: ""
-            }
           }
         },
         size: {
           random: true,
           value: 16
+        },
+        life: {
+          duration: {
+            value: 5
+          },
+          count: 1
         }
       },
       detectRetina: true
