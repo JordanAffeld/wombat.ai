@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wombat helps Chinese companies succeed in the U.S. market through American social media and advertising strategies.">
+  <title>Wombat | Bringing Chinese Brands to American Screens</title>
+  <!-- Google Fonts: Montserrat (modern, professional font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --background-dark: #0f1118;
+      --secondary-dark: #161925;
+      --text-white: #ffffff;
+      --text-light: #a0a5b8;
+      --text-muted: #6a7085;
+      --green: #00e676;
+      --green-dark: #00c853;
+      --purple: #9c27b0;
+      --purple-dark: #7b1fa2;
+      --red: #ff1744;
+      --red-dark: #d50000;
+      --blue: #2979ff;
+      --blue-dark: #2962ff;
+      --header-height: 80px;
+      --border-color: #2d3142;
+      --card-bg: #1a1e2b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header styles */
+    header {
+      background-color: rgba(15, 17, 24, 0.95);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid rgba(45, 49, 66, 0.5);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      margin-right: 12px;
+      color: var(--green);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-item {
+      position: relative;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-item > a {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      color: var(--text-white);
+    }
+
+    .nav-item > a:hover {
+      color: var(--green);
+    }
+
+    .nav-item .dropdown-icon {
+      margin-left: 6px;
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item:hover .dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--secondary-dark);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      padding: 12px 0;
+      list-style: none;
+      min-width: 220px;
+      border-radius: 6px;
+      z-index: 101;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-menu li {
+      padding: 0;
+    }
+
+    .dropdown-menu li a {
+      padding: 10px 24px;
+      display: block;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: rgba(0, 230, 118, 0.1);
+      color: var(--green);
+    }
+
+    .contact-btn {
+      background-color: var(--green);
+      color: var(--background-dark);
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Hero section */
+    .hero-section {
+      background: linear-gradient(135deg, #0f1118 0%, #1a1e2b 100%);
+      color: var(--text-white);
+      padding: calc(var(--header-height) + 80px) 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h100v100H0z"/><circle cx="10" cy="10" r="2" fill="rgba(0, 230, 118, 0.4)"/><circle cx="50" cy="10" r="2" fill="rgba(156, 39, 176, 0.4)"/><circle cx="90" cy="10" r="2" fill="rgba(255, 23, 68, 0.4)"/><circle cx="10" cy="50" r="2" fill="rgba(41, 121, 255, 0.4)"/><circle cx="50" cy="50" r="2" fill="rgba(0, 230, 118, 0.4)"/><circle cx="90" cy="50" r="2" fill="rgba(156, 39, 176, 0.4)"/><circle cx="10" cy="90" r="2" fill="rgba(255, 23, 68, 0.4)"/><circle cx="50" cy="90" r="2" fill="rgba(41, 121, 255, 0.4)"/><circle cx="90" cy="90" r="2" fill="rgba(0, 230, 118, 0.4)"/></svg>');
+      background-size: 100px 100px;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding-right: 20px;
+    }
+
+    .hero-section h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-section p {
+      font-size: 20px;
+      margin-bottom: 32px;
+      color: var(--text-light);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 38px;
+    }
+
+    .primary-button {
+      background-color: var(--green);
+      color: var(--background-dark);
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .primary-button:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+
+    .secondary-button {
+      background-color: rgba(255,255,255,0.08);
+      color: var(--text-white);
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .secondary-button:hover {
+      background-color: rgba(255,255,255,0.12);
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .stats-container {
+      display: flex;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--green), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .hero-image {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40%;
+      max-width: 500px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      border: 1px solid var(--border-color);
+    }
+
+    .platform-logos {
+      margin-top: 40px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .platform-logo {
+      height: 32px;
+      opacity: 0.7;
+      filter: grayscale(100%) brightness(2);
+      transition: all 0.3s ease;
+    }
+
+    .platform-logo:hover {
+      opacity: 1;
+      filter: grayscale(0) brightness(1);
+      transform: translateY(-3px);
+    }
+
+    /* About section */
+    .about-section {
+      padding: 100px 0;
+      background-color: var(--secondary-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-accent {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .accent-1 {
+      background-color: var(--purple);
+      top: -100px;
+      left: -100px;
+    }
+
+    .accent-2 {
+      background-color: var(--blue);
+      bottom: -100px;
+      right: -100px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-white);
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+      color: var(--text-light);
+    }
+
+    .about-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg, var(--green), var(--blue), var(--purple), var(--red));
+      z-index: -1;
+      border-radius: 12px;
+      opacity: 0.7;
+    }
+
+    .about-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .read-more {
+      color: var(--green);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .read-more i {
+      margin-left: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+      color: var(--green-dark);
+    }
+
+    .read-more:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Services section */
+    .services-section {
+      padding: 100px 0;
+      background-color: var(--background-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-accent {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.12;
+      z-index: 0;
+    }
+
+    .services-accent-1 {
+      background-color: var(--red);
+      top: 20%;
+      left: -200px;
+    }
+
+    .services-accent-2 {
+      background-color: var(--blue);
+      bottom: 10%;
+      right: -200px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:nth-child(2)::after {
+      background: var(--purple);
+    }
+
+    .service-card:nth-child(3)::after {
+      background: var(--red);
+    }
+
+    .service-card:nth-child(4)::after {
+      background: var(--blue);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .service-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .service-card-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .service-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-card-image img {
+      transform: scale(1.05);
+    }
+
+    .service-card-content {
+      padding: 30px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-white);
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    /* Case Studies section */
+    .case-studies-section {
+      padding: 100px 0;
+      background-color: var(--secondary-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-accent {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .case-accent-1 {
+      background-color: var(--green);
+      top: 30%;
+      left: -150px;
+    }
+
+    .case-accent-2 {
+      background-color: var(--purple);
+      bottom: -100px;
+      right: 20%;
+    }
+
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-study-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
+    }
+
+    .case-study-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .case-study-header {
+      background-color: var(--background-dark);
+      color: var(--text-white);
+      padding: 20px 30px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .case-study-header h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .case-study-tag {
+      display: inline-block;
+      background-color: rgba(0, 230, 118, 0.15);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    .case-study-card:nth-child(2) .case-study-tag {
+      background-color: rgba(156, 39, 176, 0.15);
+      color: var(--purple);
+    }
+
+    .case-study-card:nth-child(3) .case-study-tag {
+      background-color: rgba(255, 23, 68, 0.15);
+      color: var(--red);
+    }
+
+    .case-study-content {
+      padding: 30px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .result-number {
+      font-size: 48px;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--green), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .case-study-card:nth-child(2) .result-number {
+      background: linear-gradient(to right, var(--purple), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .case-study-card:nth-child(3) .result-number {
+      background: linear-gradient(to right, var(--red), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .result-label {
+      font-size: 16px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .case-study-content p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    /* Insights section */
+    .insights-section {
+      padding: 100px 0;
+      background-color: var(--background-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .insights-accent {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .insights-accent-1 {
+      background-color: var(--blue);
+      top: -100px;
+      right: 10%;
+    }
+
+    .insights-accent-2 {
+      background-color: var(--red);
+      bottom: 0;
+      left: 30%;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .insight-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
+    }
+
+    .insight-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .insight-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .insight-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .insight-card:hover .insight-image img {
+      transform: scale(1.05);
+    }
+
+    .insight-content {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .insight-date {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .insight-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-white);
+      line-height: 1.4;
+    }
+
+    .insight-card p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    /* Contact section */
+    .contact-section {
+      padding: 100px 0;
+      background-color: var(--secondary-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-accent {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    .contact-accent-1 {
+      background-color: var(--green);
+      top: -100px;
+      right: -100px;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-info h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      color: var(--text-light);
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(0, 230, 118, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .contact-method:nth-child(1) .contact-icon {
+      background-color: rgba(0, 230, 118, 0.1);
+      color: var(--green);
+    }
+
+    .contact-method:nth-child(2) .contact-icon {
+      background-color: rgba(156, 39, 176, 0.1);
+      color: var(--purple);
+    }
+
+    .contact-method:nth-child(3) .contact-icon {
+      background-color: rgba(41, 121, 255, 0.1);
+      color: var(--blue);
+    }
+
+    .contact-details h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .contact-details p {
+      color: var(--text-light);
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+
+    .contact-form {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border: 1px solid var(--border-color);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background-color: var(--secondary-dark);
+      color: var(--text-white);
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.15);
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: var(--green);
+      color: var(--background-dark);
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--background-dark);
+      padding: 80px 0 30px;
+      position: relative;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .footer-about {
+      color: var(--text-light);
+      margin-bottom: 25px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--secondary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-white);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .social-icon:hover {
+      background-color: var(--green);
+      color: var(--background-dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-heading {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: var(--text-white);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .hero-section {
+        padding: calc(var(--header-height) + 60px) 0 60px;
+      }
+
+      .hero-section h1 {
+        font-size: 40px;
+      }
+
+      .hero-image {
+        width: 45%;
+      }
+
+      .about-grid,
+      .contact-container {
+        gap: 40px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding-right: 0;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      .stats-container {
+        justify-content: center;
+      }
+
+      .hero-image {
+        display: none;
+      }
+
+      .platform-logos {
+        justify-content: center;
+      }
+
+      .about-grid,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .case-studies-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-section h1 {
+        font-size: 32px;
+      }
+
+      .section-header h2 {
+        font-size: 28px;
+      }
+
+      .about-content h3,
+      .contact-info h2 {
+        font-size: 24px;
+      }
+
+      .services-grid,
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .primary-button,
+      .secondary-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fas fa-w logo-icon"></i>
+        Wombat
+      </a>
+      <div class="nav-wrapper">
+        <nav class="main-nav">
+          <div class="nav-item">
+            <a href="#">Home</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Social Media Management</a></li>
+              <li><a href="#">Content Creation</a></li>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">Market Research</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <a href="#">Case Studies</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">About Us</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Insights</a>
+          </div>
+        </nav>
+        <a href="#" class="contact-btn">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Bringing Chinese Brands to American Screens</h1>
+        <p>We help Chinese companies break into the U.S. market with tailored social media strategies and cultural adaptation</p>
+        <div class="hero-cta">
+          <a href="#" class="primary-button">Get Started</a>
+          <a href="#" class="secondary-button">Learn More</a>
+        </div>
+        <div class="stats-container">
+          <div class="stat-item">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Clients</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">92%</span>
+            <span class="stat-label">Success Rate</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">$41M</span>
+            <span class="stat-label">Revenue Generated</span>
+          </div>
+        </div>
+        <div class="platform-logos">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/instagram.svg" alt="Instagram" class="platform-logo">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/tiktok.svg" alt="TikTok" class="platform-logo">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/youtube.svg" alt="YouTube" class="platform-logo">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/twitter.svg" alt="Twitter" class="platform-logo">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/facebook.svg" alt="Facebook" class="platform-logo">
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://source.unsplash.com/random/600x400/?marketing" alt="Marketing Strategy">
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-accent accent-1"></div>
+    <div class="about-accent accent-2"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Wombat?</h2>
+        <p>We bridge cultural gaps and create successful market entry strategies for Chinese brands</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-content">
+          <h3>Cultural Expertise That Makes The Difference</h3>
+          <p>At Wombat, we understand both Chinese and American markets intimately. Our team of bicultural experts navigates the nuances that make or break international expansion.</p>
+          <p>We don't just translate your message—we transform it to resonate with American consumers while preserving your brand's authentic identity.</p>
+          <a href="#" class="read-more">Learn more about our approach <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="about-image">
+          <img src="https://source.unsplash.com/random/600x400/?marketing-team" alt="Our Team">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="services-accent services-accent-1"></div>
+    <div class="services-accent services-accent-2"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Comprehensive solutions to establish your brand in the American market</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-image">
+            <img src="https://source.unsplash.com/random/600x400/?social-media" alt="Social Media Management">
+          </div>
+          <div class="service-card-content">
+            <h3>Social Media Management</h3>
+            <p>We build and manage your brand presence across all major U.S. platforms with culturally relevant content that engages American audiences.</p>
+            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-image">
+            <img src="https://source.unsplash.com/random/600x400/?content-creation" alt="Content Creation">
+          </div>
+          <div class="service-card-content">
+            <h3>Content Creation</h3>
+            <p>Our creative team develops authentic content that speaks to American consumers while maintaining your brand's unique voice and values.</p>
+            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-image">
+            <img src="https://source.unsplash.com/random/600x400/?digital-marketing" alt="Digital Marketing">
+          </div>
+          <div class="service-card-content">
+            <h3>Digital Marketing</h3>
+            <p>From paid advertising to influencer collaborations, we implement strategic campaigns that maximize your ROI in the U.S. market.</p>
+            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-image">
+            <img src="https://source.unsplash.com/random/600x400/?market-research" alt="Market Research">
+          </div>
+          <div class="service-card-content">
+            <h3>Market Research</h3>
+            <p>We analyze American consumer behavior and competitive landscapes to position your brand for success in the U.S. marketplace.</p>
+            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-studies-section">
+    <div class="case-accent case-accent-1"></div>
+    <div class="case-accent case-accent-2"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2>Success Stories</h2>
+        <p>See how we've helped Chinese brands thrive in the American market</p>
+      </div>
+      <div class="case-studies-grid">
+        <div class="case-study-card">
+          <div class="case-study-header">
+            <h3>LunaBeauty</h3>
+            <span class="case-study-tag">Beauty & Skincare</span>
+          </div>
+          <div class="case-study-content">
+            <div class="result-number">387%</div>
+            <div class="result-label">Increase in U.S. sales</div>
+            <p>We transformed this Chinese skincare brand into a must-have for American beauty enthusiasts through targeted influencer partnerships and culturally-tailored messaging.</p>
+            <a href="#" class="read-more">View case study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="case-study-card">
+          <div class="case-study-header">
+            <h3>TechNova</h3>
+            <span class="case-study-tag">Consumer Electronics</span>
+          </div>
+          <div class="case-study-content">
+            <div class="result-number">1.2M</div>
+            <div class="result-label">New U.S. customers</div>
+            <p>We helped this innovative tech brand break through the competitive U.S. market with a dynamic social media strategy and strategic retail partnerships.</p>
+            <a href="#" class="read-more">View case study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="case-study-card">
+          <div class="case-study-header">
+            <h3>GreenLeaf</h3>
+            <span class="case-study-tag">Eco-Friendly Products</span>
+          </div>
+          <div class="case-study-content">
+            <div class="result-number">245%</div>
+            <div class="result-label">Growth in brand awareness</div>
+            <p>Our campaign positioned this sustainable products manufacturer as an authentic eco-conscious choice for environmentally-aware American consumers.</p>
+            <a href="#" class="read-more">View case study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="insights-section">
+    <div class="insights-accent insights-accent-1"></div>
+    <div class="insights-accent insights-accent-2"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2>Market Insights</h2>
+        <p>Explore our latest insights on U.S. market trends and cross-cultural marketing</p>
+      </div>
+      <div class="insights-grid">
+        <div class="insight-card">
+          <div class="insight-image">
+            <img src="https://source.unsplash.com/random/600x400/?social-media-trends" alt="Social Media Trends">
+          </div>
+          <div class="insight-content">
+            <div class="insight-date">March 15, 2023</div>
+            <h3>5 Social Media Trends Chinese Brands Need to Know for U.S. Success</h3>
+            <p>Discover the latest platform shifts and content strategies that are driving engagement in the American market.</p>
+            <a href="#" class="read-more">Read article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-image">
+            <img src="https://source.unsplash.com/random/600x400/?ecommerce" alt="E-commerce">
+          </div>
+          <div class="insight-content">
+            <div class="insight-date">February 28, 2023</div>
+            <h3>Navigating U.S. E-commerce: Platform Selection Guide for Chinese Brands</h3>
+            <p>A comprehensive comparison of U.S. e-commerce platforms and strategies for maximizing sales potential.</p>
+            <a href="#" class="read-more">Read article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-image">
+            <img src="https://source.unsplash.com/random/600x400/?culture" alt="Cultural Differences">
+          </div>
+          <div class="insight-content">
+            <div class="insight-date">January 12, 2023</div>
+            <h3>Cultural Pitfalls to Avoid: Marketing Missteps in the U.S. Market</h3>
+            <p>Learn from common mistakes made by international brands and how to create culturally appropriate messaging.</p>
+            <a href="#" class="read-more">Read article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-accent contact-accent-1"></div>
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Ready to Expand Your Brand to America?</h2>
+          <p>Let's discuss how we can help your brand succeed in the U.S. market. Our team is ready to build your customized strategy.</p>
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email Us</h4>
+              <p>hello@wombatmarketing.com</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Call Us</h4>
+              <p>+1 (415) 555-0123</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Visit Us</h4>
+              <p>350 California St, San Francisco, CA</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="company" class="form-label">Company Name</label>
+              <input type="text" id="company" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">How Can We Help?</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="footer-logo">
+            <i class="fas fa-w logo-icon"></i>
+            Wombat
+          </a>
+          <p class="footer-about">Wombat helps Chinese companies navigate and succeed in the U.S. market through specialized marketing and cultural adaptation services.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Social Media Management</a></li>
+            <li><a href="#">Content Creation</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Market Research</a></li>
+            <li><a href="#">Cultural Consulting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Insights</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Market Reports</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2023 Wombat Marketing. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Font Awesome Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>
