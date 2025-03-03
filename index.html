@@ -1160,6 +1160,92 @@
     .lang-switcher:hover {
       background-color: rgba(255,255,255,0.15);
     }
+  .market-data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .market-stat-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    padding: 25px;
+  }
+  
+  .market-stat-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-white);
+    text-align: center;
+  }
+  
+  .stat-chart {
+    height: 250px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-highlights {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .highlight-number {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+  }
+  
+  .highlight-label {
+    font-size: 12px;
+    color: var(--text-light);
+    max-width: 100px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .market-data-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .stat-highlights {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .highlight-item {
+      flex-direction: row;
+      text-align: left;
+      gap: 10px;
+    }
+    
+    .highlight-label {
+      max-width: none;
+      text-align: left;
+    }
+  }
   </style>
 </head>
 <header>
@@ -1399,51 +1485,106 @@
     </div>
   </section>
 
-  <section class="insights-section">
-    <div class="insights-accent insights-accent-1"></div>
-    <div class="insights-accent insights-accent-2"></div>
-    <div class="container">
-      <div class="section-header">
-        <h2>Market Insights</h2>
-        <p>Explore our latest insights on U.S. market trends and cross-cultural marketing</p>
+<section class="insights-section">
+  <div class="insights-accent insights-accent-1"></div>
+  <div class="insights-accent insights-accent-2"></div>
+  <div class="container">
+    <div class="section-header">
+      <h2>US Market Insights</h2>
+      <p>Key statistics and data to help APAC brands understand and expand their Total Addressable Market</p>
+    </div>
+    
+    <div class="market-data-grid">
+      <!-- US Market Size Stats -->
+      <div class="market-stat-card">
+        <h3>E-commerce Growth</h3>
+        <div class="stat-chart">
+          <div id="ecommerce-chart"></div>
+        </div>
+        <div class="stat-highlights">
+          <div class="highlight-item">
+            <span class="highlight-number">$905B</span>
+            <span class="highlight-label">US E-commerce Sales (2022)</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">14.2%</span>
+            <span class="highlight-label">YoY Growth</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">$1.1T</span>
+            <span class="highlight-label">Projected by 2025</span>
+          </div>
+        </div>
       </div>
-      <div class="insights-grid">
-        <div class="insight-card">
-          <div class="insight-image">
-            <img src="https://source.unsplash.com/random/600x400/?social-media-trends" alt="Social Media Trends">
+      
+      <!-- Social Commerce Stats -->
+      <div class="market-stat-card">
+        <h3>Social Commerce Sales</h3>
+        <div class="stat-chart">
+          <div id="social-commerce-chart"></div>
+        </div>
+        <div class="stat-highlights">
+          <div class="highlight-item">
+            <span class="highlight-number">$53.1B</span>
+            <span class="highlight-label">Social Commerce Revenue</span>
           </div>
-          <div class="insight-content">
-            <div class="insight-date">March 15, 2023</div>
-            <h3>5 Social Media Trends APAC Brands Need to Know for U.S. Success</h3>
-            <p>Discover the latest platform shifts and content strategies that are driving engagement in the American market.</p>
-            <a href="#" class="read-more">Read article <i class="fas fa-arrow-right"></i></a>
+          <div class="highlight-item">
+            <span class="highlight-number">36%</span>
+            <span class="highlight-label">Annual Growth Rate</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">80M</span>
+            <span class="highlight-label">Social Shoppers</span>
           </div>
         </div>
-        <div class="insight-card">
-          <div class="insight-image">
-            <img src="https://source.unsplash.com/random/600x400/?ecommerce" alt="E-commerce">
+      </div>
+      
+      <!-- TAM Expansion Opportunities -->
+      <div class="market-stat-card">
+        <h3>TAM Expansion Opportunities</h3>
+        <div class="stat-chart">
+          <div id="tam-expansion-chart"></div>
+        </div>
+        <div class="stat-highlights">
+          <div class="highlight-item">
+            <span class="highlight-number">4.3x</span>
+            <span class="highlight-label">Average TAM Growth Potential</span>
           </div>
-          <div class="insight-content">
-            <div class="insight-date">February 28, 2023</div>
-            <h3>Navigating U.S. E-commerce: Platform Selection Guide for APAC Brands</h3>
-            <p>A comprehensive comparison of U.S. e-commerce platforms and strategies for maximizing sales potential.</p>
-            <a href="#" class="read-more">Read article <i class="fas fa-arrow-right"></i></a>
+          <div class="highlight-item">
+            <span class="highlight-number">68%</span>
+            <span class="highlight-label">Lower CAC via Social</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">22%</span>
+            <span class="highlight-label">Higher LTV for APAC Brands</span>
           </div>
         </div>
-        <div class="insight-card">
-          <div class="insight-image">
-            <img src="https://source.unsplash.com/random/600x400/?culture" alt="Cultural Differences">
+      </div>
+      
+      <!-- US vs APAC Consumer Behavior -->
+      <div class="market-stat-card">
+        <h3>US vs APAC Consumer Behavior</h3>
+        <div class="stat-chart">
+          <div id="consumer-behavior-chart"></div>
+        </div>
+        <div class="stat-highlights">
+          <div class="highlight-item">
+            <span class="highlight-number">74%</span>
+            <span class="highlight-label">US Consumers Research Before Purchase</span>
           </div>
-          <div class="insight-content">
-            <div class="insight-date">January 12, 2023</div>
-            <h3>Cultural Pitfalls to Avoid: Marketing Missteps in the U.S. Market</h3>
-            <p>Learn from common mistakes made by international brands and how to create culturally appropriate messaging.</p>
-            <a href="#" class="read-more">Read article <i class="fas fa-arrow-right"></i></a>
+          <div class="highlight-item">
+            <span class="highlight-number">52%</span>
+            <span class="highlight-label">Use Social Media for Discovery</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">41%</span>
+            <span class="highlight-label">Interested in APAC Products</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="contact-section">
     <div class="contact-accent contact-accent-1"></div>
@@ -1632,6 +1773,190 @@ window.addEventListener('load', function() {
       },
       detectRetina: true
     });
+  }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof ApexCharts !== 'undefined') {
+    renderCharts();
+  } else {
+    // Load ApexCharts if not already loaded
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/apexcharts';
+    script.onload = renderCharts;
+    document.head.appendChild(script);
+  }
+  
+  function renderCharts() {
+    // E-commerce Growth Chart
+    new ApexCharts(document.querySelector("#ecommerce-chart"), {
+      series: [{
+        name: 'E-commerce Sales',
+        data: [602, 698, 792, 905, 1007, 1120]
+      }],
+      chart: {
+        type: 'area',
+        height: 250,
+        toolbar: { show: false },
+        fontFamily: 'Montserrat, sans-serif',
+        foreColor: '#a0a5b8'
+      },
+      colors: ['#00e676'],
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          opacityFrom: 0.7,
+          opacityTo: 0.2,
+          stops: [0, 90, 100]
+        }
+      },
+      dataLabels: { enabled: false },
+      stroke: { curve: 'smooth', width: 2 },
+      grid: { borderColor: '#2d3142', strokeDashArray: 3 },
+      xaxis: {
+        categories: ['2019', '2020', '2021', '2022', '2023', '2024'],
+        labels: { style: { colors: '#6a7085' } }
+      },
+      yaxis: {
+        labels: {
+          formatter: function(value) {
+            return '$' + value + 'B';
+          },
+          style: { colors: '#6a7085' }
+        }
+      },
+      tooltip: {
+        theme: 'dark',
+        y: {
+          formatter: function(value) {
+            return '$' + value + ' Billion';
+          }
+        }
+      }
+    }).render();
+    
+    // Social Commerce Chart
+    new ApexCharts(document.querySelector("#social-commerce-chart"), {
+      series: [{
+        name: 'Social Commerce Sales',
+        data: [24.2, 36.6, 45.7, 53.1, 67.8, 79.6]
+      }],
+      chart: {
+        type: 'bar',
+        height: 250,
+        toolbar: { show: false },
+        fontFamily: 'Montserrat, sans-serif',
+        foreColor: '#a0a5b8'
+      },
+      colors: ['#9c27b0'],
+      plotOptions: {
+        bar: {
+          borderRadius: 4,
+          columnWidth: '60%',
+        }
+      },
+      dataLabels: { enabled: false },
+      grid: { borderColor: '#2d3142', strokeDashArray: 3 },
+      xaxis: {
+        categories: ['2019', '2020', '2021', '2022', '2023', '2024'],
+        labels: { style: { colors: '#6a7085' } }
+      },
+      yaxis: {
+        labels: {
+          formatter: function(value) {
+            return '$' + value + 'B';
+          },
+          style: { colors: '#6a7085' }
+        }
+      },
+      tooltip: {
+        theme: 'dark',
+        y: {
+          formatter: function(value) {
+            return '$' + value + ' Billion';
+          }
+        }
+      }
+    }).render();
+    
+    // TAM Expansion Chart
+    new ApexCharts(document.querySelector("#tam-expansion-chart"), {
+      series: [44, 28, 18, 10],
+      chart: {
+        type: 'donut',
+        height: 250,
+        fontFamily: 'Montserrat, sans-serif',
+        foreColor: '#a0a5b8'
+      },
+      colors: ['#00e676', '#9c27b0', '#2979ff', '#ff1744'],
+      labels: ['Social Media', 'Marketplaces', 'Direct-to-Consumer', 'Retail Partnerships'],
+      plotOptions: {
+        pie: {
+          donut: {
+            size: '65%',
+            labels: {
+              show: true,
+              name: { show: true },
+              value: { show: true },
+              total: { show: true, label: 'TAM Growth', formatter: function() { return '4.3x' } }
+            }
+          }
+        }
+      },
+      legend: { position: 'bottom', horizontalAlign: 'center', fontSize: '11px' },
+      dataLabels: { enabled: false },
+      responsive: [{
+        breakpoint: 600,
+        options: {
+          legend: { position: 'bottom' }
+        }
+      }],
+      tooltip: { theme: 'dark' }
+    }).render();
+    
+    // Consumer Behavior Chart
+    new ApexCharts(document.querySelector("#consumer-behavior-chart"), {
+      series: [{
+        name: 'US Consumers',
+        data: [74, 52, 41, 67, 38]
+      }, {
+        name: 'APAC Consumers',
+        data: [62, 71, 28, 54, 62]
+      }],
+      chart: {
+        type: 'radar',
+        height: 250,
+        toolbar: { show: false },
+        fontFamily: 'Montserrat, sans-serif',
+        foreColor: '#a0a5b8',
+      },
+      colors: ['#2979ff', '#ff1744'],
+      markers: { size: 3 },
+      xaxis: {
+        categories: ['Research', 'Social Discovery', 'Foreign Products', 'Online Shopping', 'Brand Loyalty']
+      },
+      yaxis: {
+        show: false,
+        min: 0,
+        max: 100
+      },
+      tooltip: {
+        theme: 'dark',
+        y: {
+          formatter: function(value) {
+            return value + '%';
+          }
+        }
+      },
+      stroke: {
+        width: 2
+      },
+      fill: {
+        opacity: 0.1
+      }
+    }).render();
   }
 });
 </script>
