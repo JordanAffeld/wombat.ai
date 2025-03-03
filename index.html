@@ -1558,7 +1558,7 @@ document.addEventListener("DOMContentLoaded", function() {
         enable: true,
         outMode: "out",
         random: true,
-        speed: 0.8, // Slowed down from 1.5
+        speed: 0.8,
         straight: false
       },
       number: {
@@ -1567,15 +1567,6 @@ document.addEventListener("DOMContentLoaded", function() {
           value_area: 1000
         },
         value: 140
-      },
-      opacity: {
-        value: 0.8,
-        animation: {
-          enable: true,
-          minimumValue: 0,
-          speed: 0.3,
-          sync: false
-        }
       },
       shape: {
         type: ["character"],
@@ -1589,22 +1580,21 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       life: {
         duration: {
-          value: 6, // Increased from 3 for longer lifespan
+          value: 6,
           sync: false
         },
         count: 1
       },
-      // Added fade-in and fade-out effects
       opacity: {
-        value: 0, // Start with opacity 0
+        value: 0,
         random: false,
         animation: {
           enable: true,
-          speed: 0.2, // Speed of opacity change
+          speed: 0.2,
           minimumValue: 0,
           sync: false,
-          startValue: "min", // Start from minimum value (0) - fade in
-          destroy: "max" // Fade out when dying
+          startValue: "min",
+          destroy: "max"
         }
       }
     },
