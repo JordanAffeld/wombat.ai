@@ -1160,7 +1160,7 @@
     .lang-switcher:hover {
       background-color: rgba(255,255,255,0.15);
     }
-  .market-data-grid {
+   .market-data-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 30px;
@@ -1191,8 +1191,12 @@
   }
   
   .stat-chart {
-    height: 250px;
+    height: 280px;
     margin-bottom: 20px;
+  }
+  
+  #consumer-behavior-chart {
+    height: 350px;
   }
   
   .stat-highlights {
@@ -1541,110 +1545,50 @@
       
       <!-- TAM Expansion Opportunities -->
       <div class="market-stat-card">
-        <h3>TAM Expansion Opportunities</h3>
+        <h3>Social vs Direct Channels</h3>
         <div class="stat-chart">
           <div id="tam-expansion-chart"></div>
         </div>
         <div class="stat-highlights">
           <div class="highlight-item">
-            <span class="highlight-number">4.3x</span>
-            <span class="highlight-label">Average TAM Growth Potential</span>
+            <span class="highlight-number">65%</span>
+            <span class="highlight-label">Market Share via Social Media</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">35%</span>
+            <span class="highlight-label">Market Share via Direct-to-Consumer</span>
           </div>
           <div class="highlight-item">
             <span class="highlight-number">68%</span>
-            <span class="highlight-label">Lower CAC via Social</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-number">22%</span>
-            <span class="highlight-label">Higher LTV for APAC Brands</span>
+            <span class="highlight-label">Lower CAC via Social Channels</span>
           </div>
         </div>
       </div>
       
       <!-- US vs APAC Consumer Behavior -->
       <div class="market-stat-card">
-        <h3>US vs APAC Consumer Behavior</h3>
+        <h3>US Social Media Engagement</h3>
         <div class="stat-chart">
           <div id="consumer-behavior-chart"></div>
         </div>
         <div class="stat-highlights">
           <div class="highlight-item">
-            <span class="highlight-number">74%</span>
-            <span class="highlight-label">US Consumers Research Before Purchase</span>
+            <span class="highlight-number">82%</span>
+            <span class="highlight-label">Discover Products via Social Media</span>
           </div>
           <div class="highlight-item">
-            <span class="highlight-number">52%</span>
-            <span class="highlight-label">Use Social Media for Discovery</span>
+            <span class="highlight-number">76%</span>
+            <span class="highlight-label">Trust Influencer Recommendations</span>
           </div>
           <div class="highlight-item">
-            <span class="highlight-number">41%</span>
-            <span class="highlight-label">Interested in APAC Products</span>
+            <span class="highlight-number">79%</span>
+            <span class="highlight-label">Open to International Brands</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-  <section class="contact-section">
-    <div class="contact-accent contact-accent-1"></div>
-    <div class="container">
-      <div class="contact-container">
-        <div class="contact-info">
-          <h2>Ready to Expand Your Brand to America?</h2>
-          <p>Let's discuss how we can help your brand succeed in the U.S. market. Our team is ready to build your customized strategy.</p>
-          <div class="contact-method">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Email Us</h4>
-              <p>hello@Wombatmarketing.com</p>
-            </div>
-          </div>
-          <div class="contact-method">
-            <div class="contact-icon">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Call Us</h4>
-              <p>+1 (650) 772-0093</p>
-            </div>
-          </div>
-          <div class="contact-method">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Visit Us</h4>
-              <p>350 Waverly St, Palo Alto, CA</p>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form">
-          <form>
-            <div class="form-group">
-              <label for="name" class="form-label">Your Name</label>
-              <input type="text" id="name" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" id="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="company" class="form-label">Company Name</label>
-              <input type="text" id="company" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="message" class="form-label">How Can We Help?</label>
-              <textarea id="message" class="form-control" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <div class="container">
@@ -1883,15 +1827,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // TAM Expansion Chart
     new ApexCharts(document.querySelector("#tam-expansion-chart"), {
-      series: [44, 28, 18, 10],
+      series: [65, 35],
       chart: {
         type: 'donut',
         height: 250,
         fontFamily: 'Montserrat, sans-serif',
         foreColor: '#a0a5b8'
       },
-      colors: ['#00e676', '#9c27b0', '#2979ff', '#ff1744'],
-      labels: ['Social Media', 'Marketplaces', 'Direct-to-Consumer', 'Retail Partnerships'],
+      colors: ['#00e676', '#2979ff'],
+      labels: ['Social Media', 'Direct-to-Consumer'],
       plotOptions: {
         pie: {
           donut: {
@@ -1919,23 +1863,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Consumer Behavior Chart
     new ApexCharts(document.querySelector("#consumer-behavior-chart"), {
       series: [{
-        name: 'US Consumers',
-        data: [74, 52, 41, 67, 38]
-      }, {
-        name: 'APAC Consumers',
-        data: [62, 71, 28, 54, 62]
+        name: 'US Consumers Social Media Habits',
+        data: [82, 76, 68, 73, 79]
       }],
       chart: {
         type: 'radar',
-        height: 250,
+        height: 350,
         toolbar: { show: false },
         fontFamily: 'Montserrat, sans-serif',
         foreColor: '#a0a5b8',
       },
-      colors: ['#2979ff', '#ff1744'],
-      markers: { size: 3 },
+      colors: ['#2979ff'],
+      markers: { size: 5 },
       xaxis: {
-        categories: ['Research', 'Social Discovery', 'Foreign Products', 'Online Shopping', 'Brand Loyalty']
+        categories: ['Social Discovery', 'Influencer Trust', 'Video Content', 'Branded Content', 'International Brands']
       },
       yaxis: {
         show: false,
