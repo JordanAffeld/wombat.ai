@@ -28,6 +28,7 @@
       --border-color: #2d3142;
       --card-bg: #1a1e2b;
     }
+    
 
     * {
       margin: 0;
@@ -1120,43 +1121,58 @@
         width: 100%;
       }
     }
+    .lang-switcher {
+      margin-left: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      background-color: rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .lang-switcher:hover {
+      background-color: rgba(255,255,255,0.15);
+    }
   </style>
 </head>
-<body>
-  <header>
-    <div class="container nav-container">
-      <a href="#" class="logo">
-        <i class="fas fa-w logo-icon"></i>
-        Wombat
-      </a>
-      <div class="nav-wrapper">
-        <nav class="main-nav">
-          <div class="nav-item">
-            <a href="#">Home</a>
-          </div>
-          <div class="nav-item">
-            <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Social Media Management</a></li>
-              <li><a href="#">Content Creation</a></li>
-              <li><a href="#">Digital Marketing</a></li>
-              <li><a href="#">Market Research</a></li>
-            </ul>
-          </div>
-          <div class="nav-item">
-            <a href="#">Case Studies</a>
-          </div>
-          <div class="nav-item">
-            <a href="#">About Us</a>
-          </div>
-          <div class="nav-item">
-            <a href="#">Insights</a>
-          </div>
-        </nav>
-        <a href="#" class="contact-btn">Contact Us</a>
-      </div>
+<header>
+  <div class="container nav-container">
+    <a href="#" class="logo">
+      <i class="fas fa-w logo-icon"></i>
+      Wombat
+    </a>
+    <div class="nav-wrapper">
+      <nav class="main-nav">
+        <div class="nav-item">
+          <a href="#">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Social Media Management</a></li>
+            <li><a href="#">Content Creation</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Market Research</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="#">Case Studies</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">Insights</a>
+        </div>
+      </nav>
+      <a href="#" class="contact-btn">Contact Us</a>
+      <button class="lang-switcher">中文</button>
     </div>
-  </header>
+  </div>
+</header>
 
   <section class="hero-section">
     <div class="hero-pattern"></div>
@@ -1491,5 +1507,20 @@
 
   <!-- Font Awesome Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script>
+  document.querySelector('.lang-switcher').addEventListener('click', function() {
+    // In a real implementation, this would switch the page content
+    const currentLang = this.textContent;
+    if (currentLang === '中文') {
+      this.textContent = 'English';
+      alert('Switching to Mandarin version');
+      // In reality, you would either redirect to a Chinese version or 
+      // load translations and replace page content
+    } else {
+      this.textContent = '中文';
+      alert('Switching to English version');
+    }
+  });
+</script>
 </body>
 </html>
