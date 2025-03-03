@@ -1207,11 +1207,29 @@
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/facebook.svg" alt="Facebook" class="platform-logo">
         </div>
       </div>
-      <div class="hero-image">
+      <div class="hero-image" style="z-index: 2;">
         <div id="particles-container"></div>
       </div>
     </div>
   </section>
+
+<!-- Add these CSS styles to your stylesheet -->
+<style>
+  .hero-image {
+    z-index: 2;
+    overflow: visible;
+  }
+  
+  #particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 3;
+  }
+</style>
 
   <section class="about-section">
     <div class="about-accent accent-1"></div>
