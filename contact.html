@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Wombat to help your APAC company succeed in the U.S. market through sales acceleration, marketing, and cultural adaptation.">
+  <title>Contact Us | Wombat</title>
+  <!-- Google Fonts: Montserrat (modern, professional font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --background-dark: #0f1118;
+      --secondary-dark: #161925;
+      --text-white: #ffffff;
+      --text-light: #a0a5b8;
+      --text-muted: #6a7085;
+      --green: #00e676;
+      --green-dark: #00c853;
+      --purple: #9c27b0;
+      --purple-dark: #7b1fa2;
+      --red: #ff1744;
+      --red-dark: #d50000;
+      --blue: #2979ff;
+      --blue-dark: #2962ff;
+      --header-height: 80px;
+      --border-color: #2d3142;
+      --card-bg: #1a1e2b;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header styles */
+    header {
+      background-color: rgba(15, 17, 24, 0.95);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid rgba(45, 49, 66, 0.5);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      margin-right: 12px;
+      /* Note: "fa-w" might not be available in Font Awesome 6.
+         Consider replacing with a different icon or a styled text element. */
+      color: var(--green);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-item {
+      position: relative;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-item > a {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      color: var(--text-white);
+    }
+
+    .nav-item > a:hover {
+      color: var(--green);
+    }
+
+    .nav-item .dropdown-icon {
+      margin-left: 6px;
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item:hover .dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--secondary-dark);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      padding: 12px 0;
+      list-style: none;
+      min-width: 220px;
+      border-radius: 6px;
+      z-index: 101;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-menu li {
+      padding: 0;
+    }
+
+    .dropdown-menu li a {
+      padding: 10px 24px;
+      display: block;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: rgba(0, 230, 118, 0.1);
+      color: var(--green);
+    }
+
+    .contact-btn {
+      background-color: var(--green);
+      color: var(--background-dark);
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .lang-switcher {
+      margin-left: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      background-color: rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .lang-switcher:hover {
+      background-color: rgba(255,255,255,0.15);
+    }
+
+    /* Page header */
+    .page-header {
+      padding-top: calc(var(--header-height) + 60px);
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, #0f1118 0%, #1a1e2b 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .page-header p {
+      font-size: 18px;
+      color: var(--text-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .header-accent {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.12;
+      z-index: 0;
+    }
+
+    .header-accent-1 {
+      background-color: var(--green);
+      top: -100px;
+      right: 10%;
+    }
+    
+    .header-accent-2 {
+      background-color: var(--blue);
+      bottom: -100px;
+      left: 10%;
+    }
+
+    /* Contact grid section */
+    .contact-section {
+      padding: 80px 0;
+      background-color: var(--background-dark);
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Contact info */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .contact-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .contact-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-icon {
+      margin-right: 15px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--background-dark);
+      font-size: 18px;
+    }
+
+    .sales-icon {
+      background-color: var(--green);
+    }
+
+    .support-icon {
+      background-color: var(--blue);
+    }
+
+    .creator-icon {
+      background-color: var(--purple);
+    }
+
+    .media-icon {
+      background-color: var(--red);
+    }
+
+    .contact-detail {
+      margin-bottom: 15px;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-detail i {
+      width: 20px;
+      margin-right: 15px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .contact-detail a {
+      color: var(--text-light);
+    }
+
+    .contact-detail a:hover {
+      color: var(--green);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background-color: var(--green);
+      color: var(--background-dark);
+      transform: translateY(-3px);
+    }
+
+    /* Contact form */
+    .contact-form-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border: 1px solid var(--border-color);
+    }
+
+    .contact-form-header {
+      margin-bottom: 30px;
+    }
+
+    .contact-form-header h3 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-white);
+    }
+
+    .contact-form-header p {
+      color: var(--text-light);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background-color: var(--secondary-dark);
+      color: var(--text-white);
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.15);
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: var(--green);
+      color: var(--background-dark);
+      padding: 16px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: var(--background-dark);
+      padding: 80px 0 30px;
+      position: relative;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .footer-about {
+      color: var(--text-light);
+      margin-bottom: 25px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-white);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .social-icon:hover {
+      background-color: var(--green);
+      color: var(--background-dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-heading {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: var(--text-white);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .contact-grid,
+      .footer-grid {
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-header h1 {
+        font-size: 32px;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-w logo-icon"></i>
+        Wombat
+      </a>
+      <div class="nav-wrapper">
+        <nav class="main-nav">
+          <div class="nav-item">
+            <a href="index.html">Home</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Sales Acceleration</a></li>
+              <li><a href="#">Social Media Management</a></li>
+              <li><a href="#">Content Creation</a></li>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">Market Research</a></li>
+              <li><a href="#">AI Solutions</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <a href="#">Case Studies</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">About Us</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Insights</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Shop <i class="fas fa-shopping-cart" style="margin-left: 6px; color: var(--green);"></i></a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Become a Creator <i class="fas fa-star" style="margin-left: 6px; color: var(--green);"></i></a>
+          </div>
+        </nav>
+        <a href="contact.html" class="contact-btn">Contact Us</a>
+        <button class="lang-switcher">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="header-accent header-accent-1"></div>
+    <div class="header-accent header-accent-2"></div>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Get in touch with our team to discuss how we can help your APAC brand succeed in the U.S. market</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3>
+              <span class="contact-icon sales-icon"><i class="fas fa-chart-line"></i></span>
+              Sales Team
+            </h3>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:sales@wombat.com">sales@wombat.com</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:+18005551234">+1 (800) 555-1234</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-clock"></i>
+              <span>Mon-Fri, 9:00 AM - 6:00 PM EST</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>
+              <span class="contact-icon support-icon"><i class="fas fa-headset"></i></span>
+              Client Support
+            </h3>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:support@wombat.com">support@wombat.com</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:+18005555678">+1 (800) 555-5678</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-clock"></i>
+              <span>24/7 Support</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>
+              <span class="contact-icon creator-icon"><i class="fas fa-users"></i></span>
+              Creator Program
+            </h3>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:creators@wombat.com">creators@wombat.com</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:+18005559012">+1 (800) 555-9012</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-clock"></i>
+              <span>Mon-Fri, 10:00 AM - 7:00 PM EST</span>
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <h3>
+              <span class="contact-icon media-icon"><i class="fas fa-newspaper"></i></span>
+              Media Inquiries
+            </h3>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:press@wombat.com">press@wombat.com</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:+18005553456">+1 (800) 555-3456</a>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <div class="contact-form-header">
+            <h3>Send us a message</h3>
+            <p>Tell us about your project and how we can help you enter the U.S. market</p>
+          </div>
+          <form id="contactForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="company" class="form-label">Company Name</label>
+                <input type="text" id="company" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <select id="subject" class="form-control" required>
+                <option value="" selected disabled>Select a subject</option>
+                <option value="sales">Sales Acceleration</option>
+                <option value="marketing">Digital Marketing</option>
+                <option value="social">Social Media Management</option>
+                <option value="content">Content Creation</option>
+                <option value="creator">Become a Creator</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" class="form-control" rows="5" required></textarea>
+            </div>
+            <div class="form-group full-width">
+              <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <i class="fas fa-w logo-icon"></i>
+            Wombat
+          </a>
+          <p class="footer-about">Wombat helps APAC companies navigate and succeed in the U.S. market through specialized marketing and cultural adaptation services.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Social Media Management</a></li>
+            <li><a href="#">Content Creation</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Market Research</a></li>
+            <li><a href="#">Cultural Consulting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Insights</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Market Reports</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2023 Wombat Marketing. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Font Awesome Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>
