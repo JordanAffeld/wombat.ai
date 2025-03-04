@@ -571,47 +571,8 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <i class="fas fa-w logo-icon"></i>
-        Wombat
-      </a>
-      <div class="nav-wrapper">
-        <nav class="main-nav">
-          <div class="nav-item">
-            <a href="index.html">Home</a>
-          </div>
-          <div class="nav-item">
-            <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Sales Acceleration</a></li>
-              <li><a href="#">Social Media Management</a></li>
-              <li><a href="#">Content Creation</a></li>
-              <li><a href="#">Digital Marketing</a></li>
-              <li><a href="#">Market Research</a></li>
-              <li><a href="#">AI Solutions</a></li>
-            </ul>
-          </div>
-          <div class="nav-item">
-            <a href="case-studies.html">Case Studies</a>
-          </div>
-          <div class="nav-item">
-            <a href="about-us.html">About Us</a>
-          </div>
-          <div class="nav-item">
-            <a href="insights.html">Insights</a>
-          </div>
-          <div class="nav-item">
-            <a href="creator.html">Become a Creator <i class="fas fa-star" style="margin-left: 6px; color: var(--green);"></i></a>
-          </div>
-        </nav>
-        <a href="contact.html" class="contact-btn">Contact Us</a>
-        <button class="lang-switcher">中文</button>
-      </div>
-    </div>
-  </header>
-
+  <div id="header-placeholder"></div>
+  
   <section class="page-header">
     <div class="header-accent header-accent-1"></div>
     <div class="header-accent header-accent-2"></div>
@@ -755,60 +716,26 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a href="index.html" class="footer-logo">
-            <i class="fas fa-w logo-icon"></i>
-            Wombat
-          </a>
-          <p class="footer-about">Wombat helps APAC companies navigate and succeed in the U.S. market through specialized marketing and cultural adaptation services.</p>
-          <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          </div>
-        </div>
-        <div>
-          <h4 class="footer-heading">Services</h4>
-          <ul class="footer-links">
-            <li><a href="#">Social Media Management</a></li>
-            <li><a href="#">Content Creation</a></li>
-            <li><a href="#">Digital Marketing</a></li>
-            <li><a href="#">Market Research</a></li>
-            <li><a href="#">Cultural Consulting</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-heading">Company</h4>
-          <ul class="footer-links">
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="insights.html">Insights</a></li>
-            <li><a href="careers.hmtl">Careers</a></li>
-            <li><a href="contact.hmtl">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-heading">Resources</h4>
-          <ul class="footer-links">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Market Reports</a></li>
-            <li><a href="#">Webinars</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright">
-        &copy; 2025 Wombat Marketing. All rights reserved.
-      </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
 
   <!-- Font Awesome Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  
+  <!-- Load header and footer -->
+  <script>
+    // Load the header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    // Load the footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
