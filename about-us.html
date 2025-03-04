@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Wombat's mission to help APAC companies succeed in the U.S. market through culturally-adapted marketing and sales strategies.">
+  <title>About Us | Wombat</title>
+  <!-- Google Fonts: Montserrat (modern, professional font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --background-dark: #0f1118;
+      --secondary-dark: #161925;
+      --text-white: #ffffff;
+      --text-light: #a0a5b8;
+      --text-muted: #6a7085;
+      --green: #00e676;
+      --green-dark: #00c853;
+      --purple: #9c27b0;
+      --purple-dark: #7b1fa2;
+      --red: #ff1744;
+      --red-dark: #d50000;
+      --blue: #2979ff;
+      --blue-dark: #2962ff;
+      --header-height: 80px;
+      --border-color: #2d3142;
+      --card-bg: #1a1e2b;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header styles */
+    header {
+      background-color: rgba(15, 17, 24, 0.95);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid rgba(45, 49, 66, 0.5);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      margin-right: 12px;
+      /* Note: "fa-w" may not exist in Font Awesome 6. Consider replacing it. */
+      color: var(--green);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-item {
+      position: relative;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-item > a {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      color: var(--text-white);
+    }
+
+    .nav-item > a:hover {
+      color: var(--green);
+    }
+
+    .nav-item .dropdown-icon {
+      margin-left: 6px;
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item:hover .dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--secondary-dark);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      padding: 12px 0;
+      list-style: none;
+      min-width: 220px;
+      border-radius: 6px;
+      z-index: 101;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-menu li {
+      padding: 0;
+    }
+
+    .dropdown-menu li a {
+      padding: 10px 24px;
+      display: block;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: rgba(0, 230, 118, 0.1);
+      color: var(--green);
+    }
+
+    .contact-btn {
+      background-color: var(--green);
+      color: var(--background-dark);
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .lang-switcher {
+      margin-left: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      background-color: rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .lang-switcher:hover {
+      background-color: rgba(255,255,255,0.15);
+    }
+
+    /* Page header */
+    .page-header {
+      padding-top: calc(var(--header-height) + 60px);
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, #0f1118 0%, #1a1e2b 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .page-header p {
+      font-size: 18px;
+      color: var(--text-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .header-accent {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.12;
+      z-index: 0;
+    }
+
+    .header-accent-1 {
+      background-color: var(--green);
+      top: -100px;
+      right: 10%;
+    }
+    
+    .header-accent-2 {
+      background-color: var(--blue);
+      bottom: -100px;
+      left: 10%;
+    }
+
+    /* Our Story Section */
+    .story-section {
+      padding: 80px 0;
+      text-align: center;
+      background-color: var(--background-dark);
+      position: relative;
+    }
+
+    .story-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--text-white);
+    }
+
+    .story-text {
+      font-size: 18px;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .story-accent {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .accent-1 {
+      background-color: var(--purple);
+      top: -100px;
+      left: -100px;
+    }
+
+    .accent-2 {
+      background-color: var(--blue);
+      bottom: -100px;
+      right: -100px;
+    }
+
+    /* Founder Section */
+    .founder-section {
+      padding: 80px 0;
+      background-color: var(--secondary-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founder-accent {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .founder-accent-1 {
+      background-color: var(--red);
+      top: 20%;
+      left: -150px;
+    }
+
+    .founder-accent-2 {
+      background-color: var(--green);
+      bottom: -100px;
+      right: 20%;
+    }
+
+    .founder-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .founder-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
+    }
+
+    .founder-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .founder-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 25px;
+      border: 3px solid var(--green);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .founder-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .founder-name {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-white);
+    }
+
+    .founder-title {
+      font-size: 18px;
+      color: var(--green);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--secondary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-white);
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background-color: var(--green);
+      color: var(--background-dark);
+      transform: translateY(-3px);
+    }
+
+    .founder-content {
+      padding: 40px;
+    }
+
+    .founder-bio {
+      color: var(--text-light);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .founder-quote {
+      border-left: 3px solid var(--green);
+      padding-left: 25px;
+      font-style: italic;
+      margin-bottom: 30px;
+      color: var(--text-white);
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 80px 0;
+      background-color: var(--background-dark);
+      position: relative;
+    }
+
+    .values-accent {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .values-accent-1 {
+      background-color: var(--purple);
+      top: 30%;
+      right: -150px;
+    }
+
+    .values-accent-2 {
+      background-color: var(--blue);
+      bottom: -100px;
+      left: 20%;
+    }
+
+    .values-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .value-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .value-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:nth-child(2)::after {
+      background: var(--purple);
+    }
+
+    .value-card:nth-child(3)::after {
+      background: var(--red);
+    }
+
+    .value-card:nth-child(4)::after {
+      background: var(--blue);
+    }
+
+    .value-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .value-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--background-dark);
+      font-size: 24px;
+    }
+
+    .value-icon-1 {
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+    }
+
+    .value-icon-2 {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    }
+
+    .value-icon-3 {
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+    }
+
+    .value-icon-4 {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    }
+
+    .value-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text-white);
+    }
+
+    .value-text {
+      color: var(--text-light);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* Timeline Section */
+    .timeline-section {
+      padding: 80px 0;
+      background-color: var(--secondary-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-accent {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .timeline-accent-1 {
+      background-color: var(--blue);
+      top: -100px;
+      right: 10%;
+    }
+
+    .timeline-accent-2 {
+      background-color: var(--green);
+      bottom: -100px;
+      left: 30%;
+    }
+
+    .timeline-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: var(--border-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--green);
+      border-radius: 50%;
+      top: 28px;
+      right: -10px;
+      z-index: 1;
+      box-shadow: 0 0 0 4px rgba(0, 230, 118, 0.2);
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: -10px;
+      right: auto;
+    }
+
+    .timeline-item-content {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .timeline-item-content::before {
+      content: '';
+      position: absolute;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent transparent var(--card-bg);
+      top: 18px;
+      right: -20px;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(even) .timeline-item-content::before {
+      border-color: transparent var(--card-bg) transparent transparent;
+      left: -20px;
+      right: auto;
+    }
+
+    .timeline-date {
+      font-size: 14px;
+      color: var(--green);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-white);
+    }
+
+    .timeline-text {
+      color: var(--text-light);
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--background-dark);
+      padding: 80px 0 30px;
+      position: relative;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .footer-about {
+      color: var(--text-light);
+      margin-bottom: 25px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-white);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .social-icon:hover {
+      background-color: var(--green);
+      color: var(--background-dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-heading {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: var(--text-white);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .founder-header {
+        padding: 30px;
+      }
+      
+      .founder-content {
+        padding: 30px;
+      }
+      
+      .founder-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .timeline::before {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .timeline-item::after {
+        left: 21px;
+        top: 20px;
+      }
+      
+      .timeline-item:nth-child(even)::after {
+        left: 21px;
+      }
+      
+      .timeline-item-content::before {
+        border-color: transparent var(--card-bg) transparent transparent;
+        left: -20px;
+        right: auto;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 36px;
+      }
+      
+      .founder-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 16px;
+      }
+      
+      .page-header h1 {
+        font-size: 28px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .founder-image {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .founder-name {
+        font-size: 24px;
+      }
+      
+      .founder-header,
+      .founder-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-w logo-icon"></i>
+        Wombat
+      </a>
+      <div class="nav-wrapper">
+        <nav class="main-nav">
+          <div class="nav-item">
+            <a href="index.html">Home</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Sales Acceleration</a></li>
+              <li><a href="#">Social Media Management</a></li>
+              <li><a href="#">Content Creation</a></li>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">Market Research</a></li>
+              <li><a href="#">AI Solutions</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <a href="#">Case Studies</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">About Us</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Insights</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Become a Creator <i class="fas fa-star" style="margin-left: 6px; color: var(--green);"></i></a>
+          </div>
+        </nav>
+        <a href="contact.html" class="contact-btn">Contact Us</a>
+        <button class="lang-switcher">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="header-accent header-accent-1"></div>
+    <div class="header-accent header-accent-2"></div>
+    <div class="container">
+      <h1>About Wombat</h1>
+      <p>Building bridges between APAC innovation and U.S. consumers through cultural intelligence and revenue generation</p>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="story-accent accent-1"></div>
+    <div class="story-accent accent-2"></div>
+    <div class="container">
+      <div class="story-container">
+        <h2 class="section-title">Our Story</h2>
+        <p class="story-text">
+          Wombat was born from a simple yet powerful insight: APAC companies with exceptional products often struggle to connect with American consumers due to cultural and market differences. During his time in international business development, our founder Jordan Affeld recognized the need for a specialized agency that could authentically bridge this gap.
+        </p>
+        <p class="story-text">
+          The name "Wombat" symbolizes our mission – just as a wombat creates pathways through challenging terrain, we create clear paths for APAC companies to navigate the complex U.S. market. Since our founding in 2020, we have helped over 150 brands enter the United States, generating more than $41 million in new revenue.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder-section">
+    <div class="founder-accent founder-accent-1"></div>
+    <div class="founder-accent founder-accent-2"></div>
+    <div class="container">
+      <div class="founder-container">
+        <h2 class="section-title">Our Founder</h2>
+        <div class="founder-grid">
+          <div class="founder-card">
+            <div class="founder-header">
+              <div class="founder-image">
+                <img src="/api/placeholder/400/400" alt="Jordan Affeld">
+              </div>
+              <h3 class="founder-name">Jordan Affeld</h3>
+              <p class="founder-title">Founder &amp; CEO</p>
+              <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="founder-content">
+              <p class="founder-bio">
+                Jordan Affeld combines deep expertise in cross-cultural business strategy with a passion for helping innovative APAC companies succeed in the U.S. market. With over 10 years of international business development experience in technology, consumer goods, and retail, he has uniquely positioned Wombat as the go-to agency for bridging the East-West divide.
+              </p>
+              <p class="founder-bio">
+                Prior to founding Wombat, Jordan led international expansion for several high-growth tech companies and served as an advisor to multinational corporations on their Asia-Pacific strategies. He is fluent in Mandarin Chinese and French.
+              </p>
+              <blockquote class="founder-quote">
+                "The most innovative products can fail not due to their quality, but because they miss the cultural mark. At Wombat, we ensure that APAC innovations find their true audience in America while driving impressive revenue growth."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-logo">
+            <i class="fas fa-w logo-icon"></i>
+            Wombat
+          </a>
+          <p class="footer-about">Wombat helps APAC companies navigate and succeed in the U.S. market through specialized marketing, cultural adaptation, and revenue generation strategies.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Sales Acceleration</a></li>
+            <li><a href="#">Social Media Management</a></li>
+            <li><a href="#">Content Creation</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Market Research</a></li>
+            <li><a href="#">AI Solutions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Insights</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Market Reports</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2023 Wombat Marketing. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Font Awesome Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>
