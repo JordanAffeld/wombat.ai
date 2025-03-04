@@ -1252,8 +1252,6 @@
   }
   </style>
 </head>
-  
-<!--#include file="header.html" -->
 
   <section class="hero-section">
     <div class="hero-pattern"></div>
@@ -1867,6 +1865,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-<!--#include file="header.html" -->
+<script>
+  // Load the header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+  
+  // Load the footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 </body>
 </html>
