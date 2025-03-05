@@ -9,248 +9,78 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="components.css">
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
   <style>
-    :root {
-      --background-dark: #0f1118;
-      --secondary-dark: #161925;
-      --text-white: #ffffff;
-      --text-light: #a0a5b8;
-      --text-muted: #6a7085;
-      --green: #00e676;
-      --green-dark: #00c853;
-      --purple: #9c27b0;
-      --purple-dark: #7b1fa2;
-      --red: #ff1744;
-      --red-dark: #d50000;
-      --blue: #2979ff;
-      --blue-dark: #2962ff;
-      --header-height: 80px;
-      --border-color: #2d3142;
-      --card-bg: #1a1e2b;
-    }
-    
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      background-color: var(--background-dark);
-      color: var(--text-white);
-      line-height: 1.6;
-      font-weight: 400;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s ease;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header styles */
-    header {
-      background-color: rgba(15, 17, 24, 0.95);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      width: 100%;
-      z-index: 100;
-      border-bottom: 1px solid rgba(45, 49, 66, 0.5);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: var(--header-height);
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text-white);
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-icon {
-      margin-right: 12px;
-      color: var(--green);
-    }
-
-    .nav-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .nav-item {
-      position: relative;
-      font-weight: 500;
-      font-size: 15px;
-      transition: color 0.2s ease;
-      cursor: pointer;
-    }
-
-    .nav-item > a {
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      color: var(--text-white);
-    }
-
-    .nav-item > a:hover {
-      color: var(--green);
-    }
-
-    .nav-item .dropdown-icon {
-      margin-left: 6px;
-      font-size: 12px;
-      transition: transform 0.3s ease;
-    }
-
-    .nav-item:hover .dropdown-icon {
-      transform: rotate(180deg);
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: var(--secondary-dark);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      opacity: 0;
-      visibility: hidden;
-      padding: 12px 0;
-      list-style: none;
-      min-width: 220px;
-      border-radius: 6px;
-      z-index: 101;
-      transition: all 0.2s ease;
-      border: 1px solid var(--border-color);
-    }
-
-    .nav-item:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .dropdown-menu li {
-      padding: 0;
-    }
-
-    .dropdown-menu li a {
-      padding: 10px 24px;
-      display: block;
-      color: var(--text-light);
-      font-size: 14px;
-    }
-
-    .dropdown-menu li a:hover {
-      background-color: rgba(0, 230, 118, 0.1);
-      color: var(--green);
-    }
-
-    .contact-btn {
-      background-color: var(--green);
-      color: var(--background-dark);
-      padding: 10px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: all 0.3s ease;
-    }
-
-    .contact-btn:hover {
-      background-color: var(--green-dark);
-      transform: translateY(-2px);
-    }
-
     /* Hero section */
     .hero-section {
-    background: linear-gradient(135deg, #0f1118 0%, #1a1e2b 100%);
-    color: var(--text-white);
-    padding: calc(var(--header-height) + 80px) 0 80px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+      background: linear-gradient(135deg, #0f1118 0%, #1a1e2b 100%);
+      color: var(--text-white);
+      padding: calc(var(--header-height) + 80px) 0 80px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
     
     .hero-pattern {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h100v100H0z"/><circle cx="10" cy="10" r="2" fill="rgba(0, 230, 118, 0.4)"/><circle cx="50" cy="10" r="2" fill="rgba(156, 39, 176, 0.4)"/><circle cx="90" cy="10" r="2" fill="rgba(255, 23, 68, 0.4)"/><circle cx="10" cy="50" r="2" fill="rgba(41, 121, 255, 0.4)"/><circle cx="50" cy="50" r="2" fill="rgba(0, 230, 118, 0.4)"/><circle cx="90" cy="50" r="2" fill="rgba(156, 39, 176, 0.4)"/><circle cx="10" cy="90" r="2" fill="rgba(255, 23, 68, 0.4)"/><circle cx="50" cy="90" r="2" fill="rgba(41, 121, 255, 0.4)"/><circle cx="90" cy="90" r="2" fill="rgba(0, 230, 118, 0.4)"/></svg>');
-    background-size: 100px 100px;
-    opacity: 0.3;
-    z-index: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h100v100H0z"/><circle cx="10" cy="10" r="2" fill="rgba(0, 230, 118, 0.4)"/><circle cx="50" cy="10" r="2" fill="rgba(156, 39, 176, 0.4)"/><circle cx="90" cy="10" r="2" fill="rgba(255, 23, 68, 0.4)"/><circle cx="10" cy="50" r="2" fill="rgba(41, 121, 255, 0.4)"/><circle cx="50" cy="50" r="2" fill="rgba(0, 230, 118, 0.4)"/><circle cx="90" cy="50" r="2" fill="rgba(156, 39, 176, 0.4)"/><circle cx="10" cy="90" r="2" fill="rgba(255, 23, 68, 0.4)"/><circle cx="50" cy="90" r="2" fill="rgba(41, 121, 255, 0.4)"/><circle cx="90" cy="90" r="2" fill="rgba(0, 230, 118, 0.4)"/></svg>');
+      background-size: 100px 100px;
+      opacity: 0.3;
+      z-index: 1;
     }
     
     .hero-content {
-    position: relative;
-    z-index: 10;
-    max-width: 600px;
-    padding-right: 20px;
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+      padding-right: 20px;
     }
     
     .hero-image {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
     }
     
     #particles-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    background-color: transparent;
-    z-index: 3;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background-color: transparent;
+      z-index: 3;
     }
     
     .hero-section h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    position: relative;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      position: relative;
     }
     
     .hero-section p {
-    font-size: 20px;
-    margin-bottom: 32px;
-    color: var(--text-light);
-    position: relative;
+      font-size: 20px;
+      margin-bottom: 32px;
+      color: var(--text-light);
+      position: relative;
     }
     
     .hero-cta {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 38px;
-    position: relative;
+      display: flex;
+      gap: 16px;
+      margin-bottom: 38px;
+      position: relative;
     }
 
     .primary-button {
@@ -496,7 +326,7 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
+      gap: 64px 30px;
       margin-top: 50px;
       position: relative;
       z-index: 1;
@@ -508,11 +338,12 @@
       overflow: hidden;
       box-shadow: 0 10px 20px rgba(0,0,0,0.15);
       transition: all 0.3s ease;
-      height: 100%;
+      height: auto;
       display: flex;
       flex-direction: column;
       border: 1px solid var(--border-color);
       position: relative;
+      margin-bottom: 0;
     }
 
     .service-card::after {
@@ -570,6 +401,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
 
     .service-card h3 {
@@ -993,30 +825,6 @@
       margin-bottom: 25px;
     }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-
-.social-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-white);
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
-}
-
-.social-icon:hover {
-  background-color: var(--text-white);
-  color: var(--background-dark);
-  transform: translateY(-3px);
-}
-
     .footer-heading {
       font-size: 18px;
       font-weight: 600;
@@ -1128,6 +936,7 @@
       .services-grid,
       .insights-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
 
       .container {
@@ -1161,7 +970,7 @@
    .market-data-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 30px;
+    gap: 64px 30px;
     margin-top: 50px;
     position: relative;
     z-index: 1;
@@ -1173,11 +982,12 @@
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-color);
     padding: 25px;
+    margin-bottom: 0;
   }
   
   .market-stat-card h3 {
@@ -1230,6 +1040,7 @@
   @media (max-width: 768px) {
     .market-data-grid {
       grid-template-columns: 1fr;
+      gap: 40px;
     }
     
     .stat-highlights {
@@ -1436,69 +1247,85 @@
     <div class="services-accent services-accent-1"></div>
     <div class="services-accent services-accent-2"></div>
     <div class="container">
-      <div class="section-header">
-        <h2>Our Services</h2>
-        <p>Comprehensive solutions to establish your brand in the American market</p>
-      </div>
+      <h2 class="section-title">Our Services</h2>
+      <p>Comprehensive solutions to establish your brand in the American market</p>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-card-image">
-            <img src="https://source.unsplash.com/random/600x400/?social+media+analytics+dashboard" alt="Social Media Management">
+          <div class="service-icon service-icon-1">
+            <i class="fas fa-hashtag"></i>
           </div>
           <div class="service-card-content">
             <h3>Social Media Management</h3>
             <p>We build and manage your brand presence across all major U.S. platforms with culturally relevant content that engages American audiences.</p>
-            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+            <a href="/services/social-media-management.html" class="learn-more">
+              Learn more
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-card-image">
-            <img src="https://source.unsplash.com/random/600x400/?content+creation+studio" alt="Content Creation">
+          <div class="service-icon service-icon-2">
+            <i class="fas fa-pen-fancy"></i>
           </div>
           <div class="service-card-content">
             <h3>Content Creation</h3>
             <p>Our creative team develops authentic content that speaks to American consumers while maintaining your brand's unique voice and values.</p>
-            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+            <a href="/services/content-creation.html" class="learn-more">
+              Learn more
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-card-image">
-            <img src="https://source.unsplash.com/random/600x400/?digital+marketing+data" alt="Digital Marketing">
+          <div class="service-icon service-icon-3">
+            <i class="fas fa-bullhorn"></i>
           </div>
           <div class="service-card-content">
             <h3>Digital Marketing</h3>
             <p>From paid advertising to influencer collaborations, we implement strategic campaigns that maximize your ROI in the U.S. market.</p>
-            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+            <a href="/services/digital-marketing.html" class="learn-more">
+              Learn more
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-card-image">
-            <img src="https://source.unsplash.com/random/600x400/?market+research+analysis" alt="Market Research">
+          <div class="service-icon service-icon-4">
+            <i class="fas fa-chart-pie"></i>
           </div>
           <div class="service-card-content">
             <h3>Market Research</h3>
             <p>We analyze American consumer behavior and competitive landscapes to position your brand for success in the U.S. marketplace.</p>
-            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+            <a href="/services/market-research.html" class="learn-more">
+              Learn more
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-card-image">
-            <img src="https://source.unsplash.com/random/600x400/?business+growth+chart" alt="Sales Strategy">
+          <div class="service-icon service-icon-5">
+            <i class="fas fa-handshake"></i>
           </div>
           <div class="service-card-content">
             <h3>Sales Strategy</h3>
-            <p>Work with our sales team to identify optimal sales channels, partnership opportunities, and market entry strategies to accelerate your company's revenue in the U.S. market with measurable ROI.</p>
-            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+            <p>Work with our sales team to identify optimal sales channels, partnership opportunities, and market entry strategies to accelerate your company's revenue in the U.S. market.</p>
+            <a href="/services/sales.html" class="learn-more">
+              Learn more
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
         <div class="service-card">
-          <div class="service-card-image">
-            <img src="https://source.unsplash.com/random/600x400/?artificial+intelligence+network" alt="AI Content Creators">
+          <div class="service-icon service-icon-6">
+            <i class="fas fa-robot"></i>
           </div>
           <div class="service-card-content">
             <h3>AI Content Creators</h3>
-            <p>Our cutting-edge AI content generation tools create culturally nuanced content that resonates with American audiences while maintaining your brand's authentic APAC voice and values.</p>
-            <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+            <p>Our cutting-edge AI content generation tools create culturally nuanced content that resonates with American audiences while maintaining your brand's authentic APAC voice.</p>
+            <a href="/services/ai-solutions.html" class="learn-more">
+              Learn more
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>

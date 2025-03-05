@@ -9,241 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="components.css">
   <style>
-    :root {
-      --background-dark: #0f1118;
-      --secondary-dark: #161925;
-      --text-white: #ffffff;
-      --text-light: #a0a5b8;
-      --text-muted: #6a7085;
-      --green: #00e676;
-      --green-dark: #00c853;
-      --purple: #9c27b0;
-      --purple-dark: #7b1fa2;
-      --red: #ff1744;
-      --red-dark: #d50000;
-      --blue: #2979ff;
-      --blue-dark: #2962ff;
-      --header-height: 80px;
-      --border-color: #2d3142;
-      --card-bg: #1a1e2b;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      background-color: var(--background-dark);
-      color: var(--text-white);
-      line-height: 1.6;
-      font-weight: 400;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s ease;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header styles */
-    header {
-      background-color: rgba(15, 17, 24, 0.95);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      width: 100%;
-      z-index: 100;
-      border-bottom: 1px solid rgba(45, 49, 66, 0.5);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: var(--header-height);
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text-white);
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-icon {
-      margin-right: 12px;
-      /* Note: "fa-w" might not be available in Font Awesome 6.
-         Consider replacing with a different icon or a styled text element. */
-      color: var(--green);
-    }
-
-    .nav-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .nav-item {
-      position: relative;
-      font-weight: 500;
-      font-size: 15px;
-      transition: color 0.2s ease;
-      cursor: pointer;
-    }
-
-    .nav-item > a {
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      color: var(--text-white);
-    }
-
-    .nav-item > a:hover {
-      color: var(--green);
-    }
-
-    .nav-item .dropdown-icon {
-      margin-left: 6px;
-      font-size: 12px;
-      transition: transform 0.3s ease;
-    }
-
-    .nav-item:hover .dropdown-icon {
-      transform: rotate(180deg);
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: var(--secondary-dark);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      opacity: 0;
-      visibility: hidden;
-      padding: 12px 0;
-      list-style: none;
-      min-width: 220px;
-      border-radius: 6px;
-      z-index: 101;
-      transition: all 0.2s ease;
-      border: 1px solid var(--border-color);
-    }
-
-    .nav-item:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .dropdown-menu li {
-      padding: 0;
-    }
-
-    .dropdown-menu li a {
-      padding: 10px 24px;
-      display: block;
-      color: var(--text-light);
-      font-size: 14px;
-    }
-
-    .dropdown-menu li a:hover {
-      background-color: rgba(0, 230, 118, 0.1);
-      color: var(--green);
-    }
-
-    .contact-btn {
-      background-color: var(--green);
-      color: var(--background-dark);
-      padding: 10px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: all 0.3s ease;
-    }
-
-    .contact-btn:hover {
-      background-color: var(--green-dark);
-      transform: translateY(-2px);
-    }
-
-    .lang-switcher {
-      margin-left: 16px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      padding: 6px 12px;
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-      background-color: rgba(255,255,255,0.08);
-      transition: all 0.3s ease;
-    }
-    
-    .lang-switcher:hover {
-      background-color: rgba(255,255,255,0.15);
-    }
-
-    /* Page header */
-    .page-header {
-      padding-top: calc(var(--header-height) + 60px);
-      padding-bottom: 60px;
-      background: linear-gradient(135deg, #0f1118 0%, #1a1e2b 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .page-header h1 {
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .page-header p {
-      font-size: 18px;
-      color: var(--text-light);
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .header-accent {
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.12;
-      z-index: 0;
-    }
-
-    .header-accent-1 {
-      background-color: var(--green);
-      top: -100px;
-      right: 10%;
-    }
-    
-    .header-accent-2 {
-      background-color: var(--blue);
-      bottom: -100px;
-      left: 10%;
-    }
-
     /* Contact grid section */
     .contact-section {
       padding: 80px 0;
@@ -479,30 +246,6 @@
       margin-bottom: 25px;
     }
 
-    .social-icons {
-      display: flex;
-      gap: 15px;
-    }
-
-    .social-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-white);
-      transition: all 0.3s ease;
-      border: 1px solid var(--border-color);
-    }
-
-    .social-icon:hover {
-      background-color: var(--green);
-      color: var(--background-dark);
-      transform: translateY(-3px);
-    }
-
     .footer-heading {
       font-size: 18px;
       font-weight: 600;
@@ -537,8 +280,7 @@
 
     /* Responsive styles */
     @media (max-width: 1024px) {
-      .contact-grid,
-      .footer-grid {
+      .contact-grid {
         gap: 40px;
       }
     }
@@ -547,25 +289,14 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
     }
 
     @media (max-width: 640px) {
-      .page-header h1 {
-        font-size: 32px;
-      }
       .form-grid {
         grid-template-columns: 1fr;
       }
       .form-group.full-width {
         grid-column: span 1;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
       }
     }
   </style>
@@ -736,6 +467,7 @@
       .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
       });
+  
   </script>
 </body>
 </html>

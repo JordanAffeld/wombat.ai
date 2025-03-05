@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creation - Wombat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../components.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <div class="header-accent header-accent-1"></div>
+        <div class="header-accent header-accent-2"></div>
+        <div class="container">
+            <h1>Content Creation</h1>
+            <p>Engaging content that resonates with U.S. audiences</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Professional Content Solutions</h2>
+                    <p>Our creative team produces high-quality content that connects with American audiences, helping APAC companies establish a strong brand presence in the U.S. market.</p>
+                    
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><i class="fas fa-pen-fancy"></i> Blog Writing</li>
+                        <li><i class="fas fa-camera"></i> Photography</li>
+                        <li><i class="fas fa-video"></i> Video Production</li>
+                        <li><i class="fas fa-paint-brush"></i> Graphic Design</li>
+                        <li><i class="fas fa-microphone"></i> Podcast Creation</li>
+                        <li><i class="fas fa-book"></i> eBook Development</li>
+                        <li><i class="fas fa-infinity"></i> Content Series</li>
+                    </ul>
+
+                    <h3>Our Approach</h3>
+                    <ul>
+                        <li><i class="fas fa-search"></i> Market Research</li>
+                        <li><i class="fas fa-user-check"></i> Audience Analysis</li>
+                        <li><i class="fas fa-pencil-ruler"></i> Content Strategy</li>
+                        <li><i class="fas fa-paint-brush"></i> Brand Guidelines</li>
+                        <li><i class="fas fa-clock"></i> Editorial Calendar</li>
+                        <li><i class="fas fa-sync"></i> Regular Updates</li>
+                    </ul>
+
+                    <div class="service-features">
+                        <h3>Key Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-star"></i>
+                                <h4>Quality Focus</h4>
+                                <p>Premium content that stands out</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-globe"></i>
+                                <h4>Cultural Relevance</h4>
+                                <p>Content that connects with U.S. audiences</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-paint-brush"></i>
+                                <h4>Creative Excellence</h4>
+                                <p>Innovative and engaging designs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-showcase">
+                        <div class="content-types">
+                            <div class="content-type" data-type="blog">
+                                <i class="fas fa-blog"></i>
+                                <span>Blog Posts</span>
+                            </div>
+                            <div class="content-type" data-type="video">
+                                <i class="fas fa-video"></i>
+                                <span>Video Content</span>
+                            </div>
+                            <div class="content-type" data-type="social">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Social Media</span>
+                            </div>
+                        </div>
+                        <div class="content-preview">
+                            <!-- Dynamic content preview area -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-sidebar">
+                    <div class="service-card">
+                        <h3>Why Choose Our Content Services?</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Professional writers</li>
+                            <li><i class="fas fa-check-circle"></i> Creative designers</li>
+                            <li><i class="fas fa-check-circle"></i> U.S. market expertise</li>
+                            <li><i class="fas fa-check-circle"></i> Quality assurance</li>
+                            <li><i class="fas fa-check-circle"></i> Fast turnaround</li>
+                        </ul>
+                        <a href="../contact.html" class="cta-button">Get Started</a>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Success Metrics</h3>
+                        <ul>
+                            <li><i class="fas fa-eye"></i> Content Views</li>
+                            <li><i class="fas fa-clock"></i> Time on Page</li>
+                            <li><i class="fas fa-share"></i> Social Shares</li>
+                            <li><i class="fas fa-link"></i> Backlinks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load the header
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        // Load the footer
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Content type switcher
+        document.querySelectorAll('.content-type').forEach(type => {
+            type.addEventListener('click', () => {
+                // Update preview content based on type
+                // Add animation effects
+            });
+        });
+    </script>
+</body>
+</html> 

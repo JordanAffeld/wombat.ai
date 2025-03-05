@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stay informed with Wombat's latest insights on U.S. market trends, consumer behavior, and cross-cultural marketing strategies.">
+  <title>Insights | Wombat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    /* Page specific styles */
+    .insights-section {
+      padding: 100px 0;
+      background-color: var(--background-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .insight-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .insight-image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .insight-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .insight-card:hover .insight-image img {
+      transform: scale(1.05);
+    }
+
+    .insight-content {
+      padding: 30px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .insight-tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .tag-trend {
+      background-color: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+    }
+
+    .tag-strategy {
+      background-color: rgba(41, 121, 255, 0.15);
+      color: var(--blue);
+    }
+
+    .tag-culture {
+      background-color: rgba(156, 39, 176, 0.15);
+      color: var(--purple);
+    }
+
+    .insight-date {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .insight-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-white);
+      line-height: 1.4;
+    }
+
+    .insight-excerpt {
+      color: var(--text-light);
+      margin-bottom: 25px;
+      font-size: 15px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      color: var(--green);
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      margin-top: auto;
+    }
+
+    .read-more i {
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .read-more:hover {
+      color: var(--green-dark);
+    }
+
+    .read-more:hover i {
+      transform: translateX(5px);
+    }
+
+    .featured-insight {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .featured-insight:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .featured-content {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-image {
+      height: 100%;
+      min-height: 400px;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 1024px) {
+      .featured-insight {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <section class="page-header">
+    <div class="header-accent header-accent-1"></div>
+    <div class="header-accent header-accent-2"></div>
+    <div class="container">
+      <h1>Insights</h1>
+      <p>Expert analysis and thought leadership on U.S. market trends and cross-cultural marketing strategies</p>
+    </div>
+  </section>
+
+  <section class="insights-section">
+    <div class="container">
+      <div class="insights-grid">
+        <!-- Featured Insight -->
+        <div class="featured-insight">
+          <div class="featured-content">
+            <span class="insight-tag tag-trend">Market Trend</span>
+            <div class="insight-date">June 15, 2023</div>
+            <h2 class="insight-title">The Rise of APAC Brands in America: A 2023 Market Analysis</h2>
+            <p class="insight-excerpt">An in-depth analysis of how APAC brands are reshaping the U.S. market landscape, with key trends, consumer insights, and future projections. Discover the strategies driving success and the opportunities that lie ahead.</p>
+            <a href="#" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="featured-image">
+            <img src="/api/placeholder/800/600" alt="APAC Brands Market Analysis">
+          </div>
+        </div>
+
+        <!-- Regular Insights -->
+        <div class="insight-card">
+          <div class="insight-image">
+            <img src="/api/placeholder/800/600" alt="Social Media Strategy">
+          </div>
+          <div class="insight-content">
+            <span class="insight-tag tag-strategy">Strategy</span>
+            <div class="insight-date">June 10, 2023</div>
+            <h3 class="insight-title">Mastering Social Media for Cross-Cultural Marketing</h3>
+            <p class="insight-excerpt">Learn how successful APAC brands are adapting their social media strategies for the U.S. market while maintaining their unique cultural identity.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-image">
+            <img src="/api/placeholder/800/600" alt="Consumer Behavior">
+          </div>
+          <div class="insight-content">
+            <span class="insight-tag tag-culture">Culture</span>
+            <div class="insight-date">June 5, 2023</div>
+            <h3 class="insight-title">Understanding U.S. Consumer Behavior: A Guide for APAC Brands</h3>
+            <p class="insight-excerpt">Deep dive into American consumer preferences, purchasing patterns, and how cultural differences influence buying decisions.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-image">
+            <img src="/api/placeholder/800/600" alt="Digital Marketing">
+          </div>
+          <div class="insight-content">
+            <span class="insight-tag tag-strategy">Strategy</span>
+            <div class="insight-date">May 30, 2023</div>
+            <h3 class="insight-title">Digital Marketing Trends Reshaping U.S. E-commerce</h3>
+            <p class="insight-excerpt">Explore the latest digital marketing strategies that are helping APAC brands succeed in the competitive U.S. e-commerce landscape.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Font Awesome Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  
+  <!-- Load header and footer -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html> 

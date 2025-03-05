@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Strategic sales solutions to help APAC companies drive revenue in the U.S. market.">
+    <title>Sales | Wombat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../components.css">
+    <style>
+        /* Direct overrides to ensure our styles take precedence */
+        .service-section {
+            padding: 60px 0;
+            background-color: #121722;
+        }
+        
+        .service-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background-color: rgba(30, 35, 45, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            padding: 30px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            border-color: rgba(0, 230, 118, 0.3);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 230, 118, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+        
+        .service-icon i {
+            font-size: 24px;
+            color: #00e676;
+        }
+        
+        .service-content {
+            flex: 1;
+        }
+        
+        .service-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            background-color: rgba(0, 230, 118, 0.15);
+            color: #00e676;
+        }
+        
+        .service-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .service-content p {
+            color: #b0b7c3;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .service-features li {
+            display: flex !important;
+            align-items: center !important;
+            color: #b0b7c3 !important;
+            font-size: 14px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .service-features li i {
+            color: #00e676 !important;
+            margin-right: 8px !important;
+            font-size: 12px !important;
+        }
+        
+        .results-section {
+            margin-bottom: 60px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .result-item {
+            text-align: center;
+            padding: 25px 15px;
+            background-color: rgba(30, 35, 45, 0.8);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .result-number {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #00e676, #0091ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .result-label {
+            font-size: 15px;
+            color: #b0b7c3;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px;
+            background-color: rgba(30, 35, 45, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #00e676;
+            color: #121722;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #00c853;
+        }
+        
+        @media (max-width: 1024px) {
+            .service-card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-card {
+                flex-direction: column;
+            }
+            
+            .service-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <div class="header-accent header-accent-1"></div>
+        <div class="header-accent header-accent-2"></div>
+        <div class="container">
+            <h1>Sales</h1>
+            <p>Strategic sales solutions for the U.S. market</p>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <div class="service-intro">
+                <h2>Drive Revenue in the U.S. Market</h2>
+                <p>Our sales solutions help APAC companies build effective sales strategies, processes, and teams to successfully generate revenue in the American market.</p>
+            </div>
+            
+            <div class="service-card-grid">
+                <!-- Sales Strategy Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Core Service</span>
+                        <h3>Sales Strategy</h3>
+                        <p>Comprehensive sales strategies tailored to the U.S. market, designed to help you reach your revenue goals and scale your business.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Market positioning</li>
+                            <li><i class="fas fa-check"></i> Sales process design</li>
+                            <li><i class="fas fa-check"></i> Channel strategy</li>
+                            <li><i class="fas fa-check"></i> Revenue forecasting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sales Enablement Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Core Service</span>
+                        <h3>Sales Enablement</h3>
+                        <p>Equip your sales team with the tools, content, and training they need to effectively sell your products or services in the U.S. market.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Sales collateral</li>
+                            <li><i class="fas fa-check"></i> Training programs</li>
+                            <li><i class="fas fa-check"></i> CRM implementation</li>
+                            <li><i class="fas fa-check"></i> Process optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lead Generation Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-funnel-dollar"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Core Service</span>
+                        <h3>Lead Generation</h3>
+                        <p>Strategic lead generation campaigns to fill your sales pipeline with qualified prospects from the U.S. market.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Outbound campaigns</li>
+                            <li><i class="fas fa-check"></i> Inbound strategies</li>
+                            <li><i class="fas fa-check"></i> Lead qualification</li>
+                            <li><i class="fas fa-check"></i> Pipeline management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sales Analytics Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-tag">Core Service</span>
+                        <h3>Sales Analytics</h3>
+                        <p>Data-driven insights to optimize your sales performance, identify opportunities, and make informed decisions.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Performance tracking</li>
+                            <li><i class="fas fa-check"></i> Conversion analysis</li>
+                            <li><i class="fas fa-check"></i> Pipeline forecasting</li>
+                            <li><i class="fas fa-check"></i> Revenue optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h2>What You Can Expect</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">245%</div>
+                        <div class="result-label">Average Revenue Growth</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">38%</div>
+                        <div class="result-label">Conversion Rate</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">2.7x</div>
+                        <div class="result-label">Pipeline Growth</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">52%</div>
+                        <div class="result-label">Sales Cycle Reduction</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Drive Sales in the U.S. Market?</h2>
+                <p>Let's build a sales strategy that connects with American customers and generates sustainable revenue growth.</p>
+                <a href="../contact.html" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header and footer
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 
