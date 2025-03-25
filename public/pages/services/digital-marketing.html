@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing - Wombat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/components.css">
+    <style>
+        .service-details {
+            padding: 80px 0;
+            background-color: var(--background-dark);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .service-content {
+            color: var(--text-light);
+        }
+
+        .service-content h2 {
+            font-size: 32px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .service-content h3 {
+            font-size: 24px;
+            color: var(--text-white);
+            margin: 48px 0 24px;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .marketing-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .marketing-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .marketing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .marketing-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .marketing-icon i {
+            color: var(--text-white);
+            font-size: 20px;
+        }
+
+        .marketing-card h4 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .marketing-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .metrics-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 48px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-number {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--blue), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .sidebar-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .feature-list i {
+            color: var(--blue);
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--blue);
+            color: var(--background-dark);
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--blue-dark);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .marketing-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <div class="header-accent header-accent-1"></div>
+        <div class="header-accent header-accent-2"></div>
+        <div class="container">
+            <h1>Digital Marketing</h1>
+            <p>Drive growth and engagement in the U.S. market with data-driven digital strategies</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Digital Marketing Solutions</h2>
+                    <p>Our digital marketing team helps APAC companies build and execute effective digital strategies that drive awareness, engagement, and conversions in the U.S. market.</p>
+
+                    <div class="marketing-services-grid">
+                        <div class="marketing-card">
+                            <div class="marketing-icon">
+                                <i class="fas fa-search-dollar"></i>
+                            </div>
+                            <h4>Search Marketing</h4>
+                            <p>SEO and PPC campaigns optimized for U.S. search behavior and intent</p>
+                        </div>
+
+                        <div class="marketing-card">
+                            <div class="marketing-icon">
+                                <i class="fas fa-ad"></i>
+                            </div>
+                            <h4>Paid Advertising</h4>
+                            <p>Strategic ad campaigns across major platforms with precise targeting</p>
+                        </div>
+
+                        <div class="marketing-card">
+                            <div class="marketing-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h4>Social Media Marketing</h4>
+                            <p>Engaging social campaigns that build brand awareness and community</p>
+                        </div>
+
+                        <div class="marketing-card">
+                            <div class="marketing-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Analytics & Optimization</h4>
+                            <p>Data-driven insights and continuous campaign optimization</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-section">
+                        <h3>Our Impact</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-number">312%</div>
+                                <div class="metric-label">Average ROAS</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">5.2x</div>
+                                <div class="metric-label">Traffic Growth</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">64%</div>
+                                <div class="metric-label">Conversion Rate Increase</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Why Choose Our Digital Marketing?</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Data-driven strategies</li>
+                            <li><i class="fas fa-check-circle"></i> U.S. market expertise</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-channel approach</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced analytics</li>
+                            <li><i class="fas fa-check-circle"></i> ROI focused</li>
+                            <li><i class="fas fa-check-circle"></i> Continuous optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Transparent reporting</li>
+                        </ul>
+                        <a href="../contact.html" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header and footer
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 

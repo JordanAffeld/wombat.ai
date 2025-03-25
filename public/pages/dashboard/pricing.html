@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Strategy - Wombat.ai</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div id="dashboard-header-placeholder"></div>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <h1>Pricing Strategy</h1>
+                <div class="header-actions">
+                    <button id="exportBtn" class="btn-secondary">Export Data</button>
+                    <button id="refreshBtn" class="btn-primary">Refresh</button>
+                </div>
+            </header>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Average Price</h3>
+                    <p id="averagePrice">$0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Competitiveness Score</h3>
+                    <p id="competitiveness">0/100</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Profit Margin</h3>
+                    <p id="profitMargin">0%</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Price Elasticity</h3>
+                    <p id="priceElasticity">0</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h2>Price Trends</h2>
+                    <canvas id="priceTrendsChart"></canvas>
+                </div>
+                <div class="dashboard-card">
+                    <h2>Margin Analysis</h2>
+                    <canvas id="marginAnalysisChart"></canvas>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Product Pricing</h2>
+                    <div class="card-actions">
+                        <input type="text" id="searchInput" placeholder="Search products...">
+                        <select id="filterSelect">
+                            <option value="all">All Products</option>
+                            <option value="high-margin">High Margin</option>
+                            <option value="low-margin">Low Margin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="pricingTable">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Current Price</th>
+                                <th>Market Average</th>
+                                <th>Trend</th>
+                                <th>Margin</th>
+                                <th>Elasticity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pricingTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Competitor Analysis</h2>
+                <div class="table-container">
+                    <table id="competitorTable">
+                        <thead>
+                            <tr>
+                                <th>Competitor</th>
+                                <th>Price</th>
+                                <th>Market Share</th>
+                                <th>Last Updated</th>
+                            </tr>
+                        </thead>
+                        <tbody id="competitorTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    <script src="../../js/pricing.js"></script>
+    <script src="../../js/header-loader.js"></script>
+</body>
+</html> 

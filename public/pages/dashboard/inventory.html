@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - Wombat.ai</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div id="dashboard-header-placeholder"></div>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <h1>Inventory Management</h1>
+                <div class="header-actions">
+                    <button id="exportBtn" class="btn-secondary">Export Data</button>
+                    <button id="refreshBtn" class="btn-primary">Refresh</button>
+                </div>
+            </header>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Total Inventory Value</h3>
+                    <p id="totalValue">$0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Stock Turnover Rate</h3>
+                    <p id="turnoverRate">0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Low Stock Items</h3>
+                    <p id="lowStockCount">0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Average Inventory Age</h3>
+                    <p id="avgAge">0 days</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h2>Stock Levels</h2>
+                    <canvas id="stockLevelsChart"></canvas>
+                </div>
+                <div class="dashboard-card">
+                    <h2>Value by Category</h2>
+                    <canvas id="valueBreakdownChart"></canvas>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Inventory Items</h2>
+                    <div class="card-actions">
+                        <input type="text" id="searchInput" placeholder="Search items...">
+                        <select id="filterSelect">
+                            <option value="all">All Items</option>
+                            <option value="low">Low Stock</option>
+                            <option value="out">Out of Stock</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="inventoryTable">
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Quantity</th>
+                                <th>Reorder Point</th>
+                                <th>Cost per Unit</th>
+                                <th>Status</th>
+                                <th>Inventory Age</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventoryTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    <script src="../../js/inventory.js"></script>
+    <script src="../../js/header-loader.js"></script>
+</body>
+</html> 

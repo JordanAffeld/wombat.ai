@@ -1,0 +1,101 @@
+<header>
+  <div class="container nav-container">
+    <a href="/index.html" class="logo">
+      <i class="fas fa-w logo-icon"></i>
+      Wombat
+    </a>
+    <div class="nav-wrapper">
+      <nav class="main-nav">
+        <div class="nav-item">
+          <a href="/index.html">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/public/pages/services/social-media-management.html">Social Media Management</a></li>
+            <li><a href="/public/pages/services/content-creation.html">Content Creation</a></li>
+            <li><a href="/public/pages/services/sales.html">Sales Services</a></li>
+            <li><a href="/public/pages/services/digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="/public/pages/services/market-research.html">Market Research</a></li>
+            <li><a href="/public/pages/services/ai-solutions.html">AI Solutions</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="/public/pages/case-studies.html">Case Studies</a>
+        </div>
+        <div class="nav-item">
+          <a href="/public/pages/about-us.html">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a href="/public/pages/insights.html">Insights</a>
+        </div>
+        <div class="nav-item">
+          <a href="/public/pages/become-creator.html">Become a Creator <i class="fas fa-star" style="color: var(--green);"></i></a>
+        </div>
+      </nav>
+      <div class="nav-buttons">
+        <a href="/public/pages/login.html" class="login-button">Login</a>
+        <a href="/public/pages/contact.html" class="contact-btn">Contact Us</a>
+        <button class="lang-switcher">中文</button>
+      </div>
+    </div>
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const langButton = document.getElementById('langButton');
+      const langDropdown = document.getElementById('langDropdown');
+      const langOptions = document.querySelectorAll('.lang-option');
+      const currentLang = document.querySelector('.current-lang');
+      
+      // Get stored language preference
+      const storedLang = localStorage.getItem('preferredLanguage') || 'en';
+      setActiveLanguage(storedLang);
+  
+      // Toggle dropdown
+      langButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          langDropdown.classList.toggle('show');
+          this.querySelector('.fa-chevron-down').style.transform = 
+              langDropdown.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+      });
+  
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function() {
+          langDropdown.classList.remove('show');
+          langButton.querySelector('.fa-chevron-down').style.transform = 'rotate(0)';
+      });
+  
+      // Handle language selection
+      langOptions.forEach(option => {
+          option.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              const lang = this.getAttribute('data-lang');
+              setActiveLanguage(lang);
+              langDropdown.classList.remove('show');
+              langButton.querySelector('.fa-chevron-down').style.transform = 'rotate(0)';
+              
+              // Store language preference
+              localStorage.setItem('preferredLanguage', lang);
+              
+              // Emit custom event for language change
+              window.dispatchEvent(new CustomEvent('languageChanged', {
+                  detail: { language: lang }
+              }));
+          });
+      });
+  
+      function setActiveLanguage(lang) {
+          // Update button text
+          const selectedOption = document.querySelector(`[data-lang="${lang}"]`);
+          if (selectedOption) {
+              currentLang.textContent = lang.toUpperCase();
+              
+              // Update active state
+              langOptions.forEach(opt => opt.classList.remove('active'));
+              selectedOption.classList.add('active');
+          }
+      }
+  });
+  </script> 
+</header>

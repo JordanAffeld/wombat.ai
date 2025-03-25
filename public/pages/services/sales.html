@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Acceleration - Wombat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/components.css"> 
+    <style>
+        .service-details {
+            padding: 80px 0;
+            background-color: var(--background-dark);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .service-content {
+            color: var(--text-light);
+        }
+
+        .service-content h2 {
+            font-size: 32px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .service-content h3 {
+            font-size: 24px;
+            color: var(--text-white);
+            margin: 48px 0 24px;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .sales-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .sales-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .sales-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sales-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--red), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .sales-icon i {
+            color: var(--text-white);
+            font-size: 20px;
+        }
+
+        .sales-card h4 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .sales-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .metrics-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 48px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-number {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--red), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .sidebar-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .feature-list i {
+            color: var(--red);
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--red);
+            color: var(--background-dark);
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--red-dark);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sales-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <div class="header-accent header-accent-1"></div>
+        <div class="header-accent header-accent-2"></div>
+        <div class="container">
+            <h1>Sales Acceleration</h1>
+            <p>Drive revenue growth in the U.S. market with our proven sales strategies</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Revenue Generation Solutions</h2>
+                    <p>Our sales acceleration team helps APAC companies establish and scale their revenue operations in the U.S. market through strategic partnerships, optimized sales processes, and data-driven decision making.</p>
+
+                    <div class="sales-services-grid">
+                        <div class="sales-card">
+                            <div class="sales-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4>Strategic Partnerships</h4>
+                            <p>Build valuable relationships with U.S. distributors, retailers, and strategic partners</p>
+                        </div>
+
+                        <div class="sales-card">
+                            <div class="sales-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Sales Strategy</h4>
+                            <p>Develop and implement effective sales strategies for the U.S. market</p>
+                        </div>
+
+                        <div class="sales-card">
+                            <div class="sales-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Lead Generation</h4>
+                            <p>Generate qualified leads and opportunities in your target market</p>
+                        </div>
+
+                        <div class="sales-card">
+                            <div class="sales-icon">
+                                <i class="fas fa-funnel-dollar"></i>
+                            </div>
+                            <h4>Pipeline Management</h4>
+                            <p>Optimize your sales pipeline and conversion rates with data-driven insights</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-section">
+                        <h3>Our Impact</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-number">85%</div>
+                                <div class="metric-label">Average Revenue Growth</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">45+</div>
+                                <div class="metric-label">Strategic Partners</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">3.8x</div>
+                                <div class="metric-label">ROI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Why Choose Our Sales Services?</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Proven track record</li>
+                            <li><i class="fas fa-check-circle"></i> U.S. market expertise</li>
+                            <li><i class="fas fa-check-circle"></i> Extensive partner network</li>
+                            <li><i class="fas fa-check-circle"></i> Data-driven approach</li>
+                            <li><i class="fas fa-check-circle"></i> Dedicated support</li>
+                            <li><i class="fas fa-check-circle"></i> Scalable solutions</li>
+                            <li><i class="fas fa-check-circle"></i> ROI focused</li>
+                        </ul>
+                        <a href="../contact.html" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header and footer
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 

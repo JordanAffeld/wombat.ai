@@ -1,0 +1,103 @@
+<header>
+  <div class="nav-container">
+    <a href="/" class="logo">
+      <img src="assets/images/logo.svg" alt="Wombat.ai Logo">
+    </a>
+    <div class="nav-wrapper">
+      <nav class="main-nav">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/public/pages/about-us.html" class="nav-link">About</a>
+        <a href="/public/pages/insights.html" class="nav-link">Insights</a>
+        <a href="/public/pages/case-studies.html" class="nav-link">Case Studies</a>
+      </nav>
+      <div class="nav-buttons">
+        <a href="/public/pages/become-creator.html" class="nav-link">Become a Creator</a>
+        <a href="/public/pages/contact.html" class="contact-btn">Contact Us</a>
+        <a href="/public/pages/login.html" class="login-button">Login</a>
+        <div class="lang-dropdown">
+          <button class="lang-switcher" id="langButton">
+            <span class="current-lang">EN</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="lang-dropdown-content" id="langDropdown">
+            <a href="#" data-lang="en" class="lang-option active">
+              <span class="lang-flag">🇺🇸</span>
+              English
+            </a>
+            <a href="#" data-lang="zh" class="lang-option">
+              <span class="lang-flag">🇨🇳</span>
+              中文
+            </a>
+            <a href="#" data-lang="ja" class="lang-option">
+              <span class="lang-flag">🇯🇵</span>
+              日本語
+            </a>
+            <a href="#" data-lang="ko" class="lang-option">
+              <span class="lang-flag">🇰🇷</span>
+              한국어
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const langButton = document.getElementById('langButton');
+    const langDropdown = document.getElementById('langDropdown');
+    const langOptions = document.querySelectorAll('.lang-option');
+    const currentLang = document.querySelector('.current-lang');
+    
+    // Get stored language preference
+    const storedLang = localStorage.getItem('preferredLanguage') || 'en';
+    setActiveLanguage(storedLang);
+
+    // Toggle dropdown
+    langButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        langDropdown.classList.toggle('show');
+        this.querySelector('.fa-chevron-down').style.transform = 
+            langDropdown.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        langDropdown.classList.remove('show');
+        langButton.querySelector('.fa-chevron-down').style.transform = 'rotate(0)';
+    });
+
+    // Handle language selection
+    langOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const lang = this.getAttribute('data-lang');
+            setActiveLanguage(lang);
+            langDropdown.classList.remove('show');
+            langButton.querySelector('.fa-chevron-down').style.transform = 'rotate(0)';
+            
+            // Store language preference
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Emit custom event for language change
+            window.dispatchEvent(new CustomEvent('languageChanged', {
+                detail: { language: lang }
+            }));
+        });
+    });
+
+    function setActiveLanguage(lang) {
+        // Update button text
+        const selectedOption = document.querySelector(`[data-lang="${lang}"]`);
+        if (selectedOption) {
+            currentLang.textContent = lang.toUpperCase();
+            
+            // Update active state
+            langOptions.forEach(opt => opt.classList.remove('active'));
+            selectedOption.classList.add('active');
+        }
+    }
+});
+</script> 

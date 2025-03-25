@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research - Wombat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/components.css">
+    <style> 
+        .service-details {
+            padding: 80px 0;
+            background-color: var(--background-dark);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .service-content {
+            color: var(--text-light);
+        }
+
+        .service-content h2 {
+            font-size: 32px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .service-content h3 {
+            font-size: 24px;
+            color: var(--text-white);
+            margin: 48px 0 24px;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .research-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .research-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .research-icon i {
+            color: var(--text-white);
+            font-size: 20px;
+        }
+
+        .research-card h4 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .research-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .metrics-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 48px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-number {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--purple), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .sidebar-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .feature-list i {
+            color: var(--purple);
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--purple);
+            color: var(--background-dark);
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--purple-dark);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .research-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <div class="header-accent header-accent-1"></div>
+        <div class="header-accent header-accent-2"></div>
+        <div class="container">
+            <h1>Market Research</h1>
+            <p>Gain deep insights into the U.S. market landscape and consumer behavior</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Market Intelligence Solutions</h2>
+                    <p>Our research team provides comprehensive market insights that help APAC companies make informed decisions about their U.S. market entry and expansion strategies.</p>
+
+                    <div class="research-services-grid">
+                        <div class="research-card">
+                            <div class="research-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Consumer Research</h4>
+                            <p>Deep insights into U.S. consumer behavior, preferences, and trends</p>
+                        </div>
+
+                        <div class="research-card">
+                            <div class="research-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Market Analysis</h4>
+                            <p>Comprehensive analysis of market size, trends, and opportunities</p>
+                        </div>
+
+                        <div class="research-card">
+                            <div class="research-icon">
+                                <i class="fas fa-binoculars"></i>
+                            </div>
+                            <h4>Competitor Analysis</h4>
+                            <p>Detailed assessment of competitive landscape and market positioning</p>
+                        </div>
+
+                        <div class="research-card">
+                            <div class="research-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Strategic Insights</h4>
+                            <p>Actionable recommendations for market entry and growth</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-section">
+                        <h3>Our Impact</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-number">200+</div>
+                                <div class="metric-label">Market Studies</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">95%</div>
+                                <div class="metric-label">Client Success Rate</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">4.2x</div>
+                                <div class="metric-label">Average Growth</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Why Choose Our Research?</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Comprehensive analysis</li>
+                            <li><i class="fas fa-check-circle"></i> Primary research</li>
+                            <li><i class="fas fa-check-circle"></i> Industry expertise</li>
+                            <li><i class="fas fa-check-circle"></i> Actionable insights</li>
+                            <li><i class="fas fa-check-circle"></i> Custom methodology</li>
+                            <li><i class="fas fa-check-circle"></i> Data visualization</li>
+                            <li><i class="fas fa-check-circle"></i> Strategic recommendations</li>
+                        </ul>
+                        <a href="../contact.html" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header and footer
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 

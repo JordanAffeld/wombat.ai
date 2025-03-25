@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Wombat.ai</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div id="dashboard-header-placeholder"></div>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <h1>Settings</h1>
+                <div class="header-actions">
+                    <button id="saveBtn" class="btn-primary">Save Changes</button>
+                </div>
+            </header>
+
+            <div class="settings-grid">
+                <!-- User Profile Section -->
+                <div class="dashboard-card">
+                    <h2>User Profile</h2>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" placeholder="Enter your company name">
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="dashboard-card">
+                    <h2>Notification Settings</h2>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="lowStockAlert">
+                            Low Stock Alerts
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="priceChangeAlert">
+                            Price Change Alerts
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="competitorAlert">
+                            Competitor Price Alerts
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="salesReport">
+                            Daily Sales Reports
+                        </label>
+                    </div>
+                </div>
+
+                <!-- API Configuration -->
+                <div class="dashboard-card">
+                    <h2>API Configuration</h2>
+                    <div class="form-group">
+                        <label for="apiKey">API Key</label>
+                        <div class="api-key-group">
+                            <input type="password" id="apiKey" readonly>
+                            <button class="btn-secondary" id="showApiKey">Show</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="webhookUrl">Webhook URL</label>
+                        <input type="url" id="webhookUrl" placeholder="Enter webhook URL">
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableWebhook">
+                            Enable Webhook Notifications
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Data Export Settings -->
+                <div class="dashboard-card">
+                    <h2>Data Export Settings</h2>
+                    <div class="form-group">
+                        <label for="exportFormat">Export Format</label>
+                        <select id="exportFormat">
+                            <option value="csv">CSV</option>
+                            <option value="json">JSON</option>
+                            <option value="excel">Excel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="autoExport">
+                            Enable Automatic Daily Export
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="exportTime">Export Time</label>
+                        <input type="time" id="exportTime">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../../js/header-loader.js"></script>
+</body>
+</html> 

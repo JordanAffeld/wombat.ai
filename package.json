@@ -1,0 +1,44 @@
+{
+  "name": "wombat.ai",
+  "version": "1.0.0",
+  "description": "Wombat.ai website",
+  "scripts": {
+    "build": "node src/js/utils/build.js",
+    "dev": "npm run build && live-server",
+    "watch": "nodemon --watch src/css -e css -x 'npm run build'",
+    "optimize": "node src/js/utils/optimize.js",
+    "build:prod": "npm run build && npm run optimize",
+    "start": "npm run build && npm run dev",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "test:all": "npm run test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@testing-library/jest-dom": "^6.6.3",
+    "clean-css": "^5.3.2",
+    "jest": "^29.7.0",
+    "live-server": "^1.2.2",
+    "nodemon": "^2.0.22",
+    "uglify-js": "^3.17.4"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JordanAffeld/wombat.ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JordanAffeld/wombat.ai/issues"
+  },
+  "homepage": "https://github.com/JordanAffeld/wombat.ai#readme"
+}

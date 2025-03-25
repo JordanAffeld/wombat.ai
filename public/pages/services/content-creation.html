@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creation - Wombat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/components.css">
+    <style>
+        .service-details {
+            padding: 80px 0;
+            background-color: var(--background-dark);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .service-content {
+            color: var(--text-light);
+        }
+
+        .service-content h2 {
+            font-size: 32px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .service-content h3 {
+            font-size: 24px;
+            color: var(--text-white);
+            margin: 48px 0 24px;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .content-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .content-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .content-icon i {
+            color: var(--text-white);
+            font-size: 20px;
+        }
+
+        .content-card h4 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .content-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .process-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 48px;
+            border: 1px solid var(--border-color);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .process-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .process-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--green), var(--blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .process-icon i {
+            color: var(--text-white);
+            font-size: 20px;
+        }
+
+        .process-title {
+            font-size: 18px;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+
+        .process-description {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .sidebar-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+
+        .feature-list i {
+            color: var(--purple);
+            margin-right: 12px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--purple);
+            color: var(--background-dark);
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--purple-dark);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <div class="header-accent header-accent-1"></div>
+        <div class="header-accent header-accent-2"></div>
+        <div class="container">
+            <h1>Content Creation</h1>
+            <p>Engaging content that resonates with U.S. audiences</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Professional Content Solutions</h2>
+                    <p>Our creative team produces high-quality content that connects with American audiences, helping APAC companies establish a strong brand presence in the U.S. market.</p>
+
+                    <h3>Content Services</h3>
+                    <div class="content-services-grid">
+                        <div class="content-card">
+                            <div class="content-icon">
+                                <i class="fas fa-pen-fancy"></i>
+                            </div>
+                            <h4>Blog & Article Writing</h4>
+                            <p>SEO-optimized content that engages readers and drives organic traffic</p>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="content-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h4>Video Production</h4>
+                            <p>Compelling video content that captures attention and tells your story</p>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="content-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h4>Graphic Design</h4>
+                            <p>Eye-catching visuals that strengthen your brand identity</p>
+                        </div>
+
+                        <div class="content-card">
+                            <div class="content-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
+                            <h4>Podcast Production</h4>
+                            <p>Professional audio content that connects with your audience</p>
+                        </div>
+                    </div>
+
+                    <div class="process-section">
+                        <h3>Our Creative Process</h3>
+                        <div class="process-grid">
+                            <div class="process-item">
+                                <div class="process-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h4 class="process-title">Research</h4>
+                                <p class="process-description">Understanding your audience and market needs</p>
+                            </div>
+                            
+                            <div class="process-item">
+                                <div class="process-icon">
+                                    <i class="fas fa-pencil-ruler"></i>
+                                </div>
+                                <h4 class="process-title">Create</h4>
+                                <p class="process-description">Developing engaging, culturally relevant content</p>
+                            </div>
+                            
+                            <div class="process-item">
+                                <div class="process-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4 class="process-title">Optimize</h4>
+                                <p class="process-description">Measuring and improving performance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Why Choose Our Content Services?</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Professional writers</li>
+                            <li><i class="fas fa-check-circle"></i> Creative designers</li>
+                            <li><i class="fas fa-check-circle"></i> U.S. market expertise</li>
+                            <li><i class="fas fa-check-circle"></i> Quality assurance</li>
+                            <li><i class="fas fa-check-circle"></i> Fast turnaround</li>
+                            <li><i class="fas fa-check-circle"></i> SEO optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Cultural adaptation</li>
+                        </ul>
+                        <a href="../contact.html" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header and footer
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 

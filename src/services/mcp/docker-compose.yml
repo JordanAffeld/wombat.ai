@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mcp-server:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/app/models
+    environment:
+      - MODEL_PATH=models/
+      - API_KEY=${API_KEY}
+      - MAX_BATCH_SIZE=32
+    restart: unless-stopped 

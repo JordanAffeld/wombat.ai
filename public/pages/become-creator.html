@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Wombat's creator program and help APAC brands connect with U.S. audiences through authentic content creation and influencer marketing.">
+  <title>Become a Creator | Wombat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/public/components.css">
+  <style>
+    /* Page specific styles */
+    .creator-section {
+      padding: 100px 0;
+      background-color: var(--background-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .creator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .benefits-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .benefit-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      display: flex;
+      gap: 20px;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .benefit-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .icon-earnings {
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: var(--background-dark);
+    }
+
+    .icon-brands {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: var(--background-dark);
+    }
+
+    .icon-growth {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: var(--background-dark);
+    }
+
+    .icon-support {
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: var(--background-dark);
+    }
+
+    .benefit-content h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-white);
+    }
+
+    .benefit-content p {
+      color: var(--text-light);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .application-form {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 40px;
+      border: 1px solid var(--border-color);
+    }
+
+    .form-header {
+      margin-bottom: 30px;
+    }
+
+    .form-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-white);
+    }
+
+    .form-header p {
+      color: var(--text-light);
+      font-size: 16px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--text-white);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background-color: var(--secondary-dark);
+      color: var(--text-white);
+      font-size: 15px;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.15);
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .social-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--secondary-dark);
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+    }
+
+    .submit-btn {
+      background-color: var(--green);
+      color: var(--background-dark);
+      padding: 16px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 1024px) {
+      .creator-grid {
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .creator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <section class="page-header">
+    <div class="header-accent header-accent-1"></div>
+    <div class="header-accent header-accent-2"></div>
+    <div class="container">
+      <h1>Become a Creator</h1>
+      <p>Join our network of talented creators and help APAC brands connect with U.S. audiences through authentic content</p>
+    </div>
+  </section>
+
+  <section class="creator-section">
+    <div class="container">
+      <div class="creator-grid">
+        <div class="benefits-list">
+          <div class="benefit-card">
+            <div class="benefit-icon icon-earnings">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Competitive Earnings</h3>
+              <p>Earn competitive rates for your content creation and brand collaborations, with transparent payment terms and timely processing.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon icon-brands">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Work with Leading Brands</h3>
+              <p>Create content for innovative APAC brands entering the U.S. market, and be part of their growth story.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon icon-growth">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Career Growth</h3>
+              <p>Access exclusive training, networking opportunities, and resources to enhance your content creation skills.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon icon-support">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Dedicated Support</h3>
+              <p>Get personalized support from our creator success team to help you maximize your earning potential.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="application-form">
+          <div class="form-header">
+            <h2>Apply Now</h2>
+            <p>Fill out the form below to join our creator network. We'll review your application and get back to you within 48 hours.</p>
+          </div>
+          <form id="creatorForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="niche" class="form-label">Content Niche</label>
+              <select id="niche" class="form-control" required>
+                <option value="" selected disabled>Select your primary niche</option>
+                <option value="beauty">Beauty & Skincare</option>
+                <option value="tech">Technology & Gadgets</option>
+                <option value="fashion">Fashion & Style</option>
+                <option value="lifestyle">Lifestyle & Wellness</option>
+                <option value="food">Food & Cuisine</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Social Media Platforms</label>
+              <div class="form-grid">
+                <div class="form-group">
+                  <div class="social-input">
+                    <div class="social-icon">
+                      <i class="fab fa-instagram"></i>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Instagram handle">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="social-input">
+                    <div class="social-icon">
+                      <i class="fab fa-tiktok"></i>
+                    </div>
+                    <input type="text" class="form-control" placeholder="TikTok handle">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="social-input">
+                    <div class="social-icon">
+                      <i class="fab fa-youtube"></i>
+                    </div>
+                    <input type="text" class="form-control" placeholder="YouTube channel">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="social-input">
+                    <div class="social-icon">
+                      <i class="fab fa-twitter"></i>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Twitter handle">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="experience" class="form-label">Content Creation Experience</label>
+              <textarea id="experience" class="form-control" rows="4" required placeholder="Tell us about your experience creating content and working with brands"></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="portfolio" class="form-label">Portfolio Link</label>
+              <input type="url" id="portfolio" class="form-control" placeholder="Link to your portfolio or best work">
+            </div>
+
+            <div class="form-group full-width">
+              <button type="submit" class="submit-btn">Submit Application <i class="fas fa-paper-plane ml-2"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Font Awesome Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  
+  <!-- Load header and footer -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html> 

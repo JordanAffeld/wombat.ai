@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Creation - Wombat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/components.css">
+    <style>
+        .service-details {
+            padding: 80px 0;
+            background-color: var(--background-dark);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .service-content {
+            color: var(--text-light);
+        }
+
+        .service-content h2 {
+            font-size: 32px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .service-content h3 {
+            font-size: 24px;
+            color: var(--text-white);
+            margin: 48px 0 24px;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .brand-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .brand-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--green), var(--blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .brand-icon i {
+            color: var(--text-white);
+            font-size: 20px;
+        }
+
+        .brand-card h4 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .brand-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .metrics-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 48px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-number {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--green), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .sidebar {
+            position: relative;
+            height: 100%;
+        }
+
+        .sidebar-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+            max-height: calc(100vh - 160px);
+            overflow-y: auto;
+        }
+
+        .sidebar-card h3 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .feature-list i {
+            color: var(--green);
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--green);
+            color: var(--background-dark);
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--green-dark);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-card {
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+
+            .brand-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <div class="header-accent header-accent-1"></div>
+        <div class="header-accent header-accent-2"></div>
+        <div class="container">
+            <h1>Brand Creation</h1>
+            <p>Building authentic brand presence in the U.S. market</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Strategic Brand Development</h2>
+                    <p>Our brand creation solutions help APAC companies establish a strong, authentic presence in the U.S. market through comprehensive brand strategy, design, and positioning that resonates with American consumers.</p>
+
+                    <div class="brand-services-grid">
+                        <div class="brand-card">
+                            <div class="brand-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h4>Brand Identity</h4>
+                            <p>Development of unique visual identity and brand guidelines tailored for U.S. market</p>
+                        </div>
+
+                        <div class="brand-card">
+                            <div class="brand-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h4>Brand Voice</h4>
+                            <p>Creation of authentic brand messaging and communication strategy</p>
+                        </div>
+
+                        <div class="brand-card">
+                            <div class="brand-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Target Audience</h4>
+                            <p>Deep understanding and connection with U.S. consumer segments</p>
+                        </div>
+
+                        <div class="brand-card">
+                            <div class="brand-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Market Position</h4>
+                            <p>Strategic positioning to stand out in the U.S. market landscape</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-section">
+                        <h3>Performance Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-number">45%</div>
+                                <div class="metric-label">Brand Recognition</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">38%</div>
+                                <div class="metric-label">Customer Loyalty</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">52%</div>
+                                <div class="metric-label">Market Engagement</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Brand identity development</li>
+                            <li><i class="fas fa-check"></i> Visual design system</li>
+                            <li><i class="fas fa-check"></i> Brand voice and messaging</li>
+                            <li><i class="fas fa-check"></i> Target audience analysis</li>
+                            <li><i class="fas fa-check"></i> Market positioning strategy</li>
+                            <li><i class="fas fa-check"></i> Brand guidelines</li>
+                        </ul>
+                        <a href="/public/pages/contact.html" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // Load the header
+        fetch('/public/pages/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        // Load the footer
+        fetch('/public/pages/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 

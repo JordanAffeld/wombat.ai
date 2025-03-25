@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in to your Wombat account to access our services and manage your settings.">
+    <title>Login | Wombat</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/components.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Login Section -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Sign In</h1>
+                <p>Welcome back! Please enter your details.</p>
+            </div>
+            <form class="auth-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+                    <a href="#" class="text-link">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign in
+                </button>
+                <div class="divider">or continue with</div>
+                <button type="button" class="btn btn-outline">
+                    <img src="assets/images/google-logo.png" alt="Google">
+                    Sign in with Google
+                </button>
+                <div class="auth-footer">
+                    Don't have an account? <a href="signup.html" class="text-link">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // API Configuration
+        const API_CONFIG = {
+            baseUrl: window.location.hostname === 'localhost' 
+                ? 'http://localhost:8080'
+                : `https://${window.location.hostname}`,
+            apiPath: '/api'
+        };
+
+        // Load the header
+        fetch(`${window.location.origin}/public/pages/header.html`)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading header:', error));
+      
+        // Load the footer
+        fetch(`${window.location.origin}/public/pages/footer.html`)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading footer:', error));
+
+        // Handle form submission
+        document.querySelector('.auth-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+
+            try {
+                console.log('Attempting login with:', { email });
+                const response = await fetch(`${API_CONFIG.baseUrl}${API_CONFIG.apiPath}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        email: email,
+                        password: password 
+                    })
+                });
+
+                console.log('Response status:', response.status);
+                console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+                
+                // Clone the response before reading it
+                const responseClone = response.clone();
+                let data;
+                
+                try {
+                    const text = await responseClone.text();
+                    console.log('Raw response text:', text);
+                    
+                    if (!text) {
+                        throw new Error('Empty response from server');
+                    }
+                    
+                    try {
+                        data = JSON.parse(text);
+                        console.log('Parsed response data:', data);
+                    } catch (parseError) {
+                        console.error('JSON parse error:', parseError);
+                        console.error('Failed to parse text:', text);
+                        throw new Error('Server returned invalid JSON format');
+                    }
+                } catch (error) {
+                    console.error('Response processing error:', error);
+                    throw new Error('Server returned invalid response format');
+                }
+
+                if (response.ok) {
+                    if (!data.token || !data.user) {
+                        console.error('Invalid response structure:', data);
+                        throw new Error('Invalid response format: missing token or user data');
+                    }
+                    
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('userData', JSON.stringify(data.user));
+                    if (remember) {
+                        localStorage.setItem('rememberMe', 'true');
+                    }
+                    window.location.href = `${window.location.origin}/public/pages/dashboard/analytics.html`;
+                } else {
+                    throw new Error(data.message || 'Login failed. Please try again.');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                if (error.message.includes('Failed to fetch')) {
+                    alert('Unable to connect to the server. Please ensure the server is running on port 8080 and try again.');
+                } else if (error.message.includes('Empty response')) {
+                    alert('Server returned an empty response. Please try again later.');
+                } else if (error.message.includes('invalid JSON format')) {
+                    alert('Server returned invalid data format. Please try again later.');
+                } else if (error.message.includes('missing token or user data')) {
+                    alert('Server response missing required data. Please try again later.');
+                } else {
+                    alert(error.message || 'An error occurred during login. Please try again.');
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

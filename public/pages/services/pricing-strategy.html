@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Strategy - Wombat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/components.css">
+    <style>
+        .service-details {
+            padding: 80px 0;
+            background-color: var(--background-dark);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .service-content {
+            color: var(--text-light);
+        }
+
+        .service-content h2 {
+            font-size: 32px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .service-content h3 {
+            font-size: 24px;
+            color: var(--text-white);
+            margin: 48px 0 24px;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .pricing-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .pricing-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--green), var(--blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .pricing-icon i {
+            color: var(--text-white);
+            font-size: 20px;
+        }
+
+        .pricing-card h4 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .pricing-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .metrics-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 48px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-number {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--green), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .sidebar {
+            position: relative;
+            height: 100%;
+        }
+
+        .sidebar-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+            max-height: calc(100vh - 160px);
+            overflow-y: auto;
+        }
+
+        .sidebar-card h3 {
+            font-size: 20px;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .feature-list i {
+            color: var(--green);
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--green);
+            color: var(--background-dark);
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--green-dark);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-card {
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+
+            .pricing-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="page-header">
+        <div class="header-accent header-accent-1"></div>
+        <div class="header-accent header-accent-2"></div>
+        <div class="container">
+            <h1>Pricing Strategy</h1>
+            <p>Data-driven pricing optimization for the U.S. market</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Strategic Pricing Solutions</h2>
+                    <p>Our pricing strategy solutions help APAC companies optimize their pricing models for the U.S. market, balancing profitability with market competitiveness through advanced analytics and market insights.</p>
+
+                    <div class="pricing-services-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Market Analysis</h4>
+                            <p>Comprehensive analysis of U.S. market pricing trends and competitor strategies</p>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4>Price Optimization</h4>
+                            <p>Data-driven pricing models that maximize revenue while maintaining market share</p>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h4>Dynamic Pricing</h4>
+                            <p>Real-time price adjustments based on market conditions and demand</p>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h4>Value-Based Pricing</h4>
+                            <p>Strategic pricing that reflects your product's unique value proposition</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-section">
+                        <h3>Performance Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-number">35%</div>
+                                <div class="metric-label">Increase in Profit Margins</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">28%</div>
+                                <div class="metric-label">Higher Market Share</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">42%</div>
+                                <div class="metric-label">Better Price Competitiveness</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Market analysis and competitor tracking</li>
+                            <li><i class="fas fa-check"></i> Dynamic pricing optimization</li>
+                            <li><i class="fas fa-check"></i> Value-based pricing strategies</li>
+                            <li><i class="fas fa-check"></i> Price elasticity modeling</li>
+                            <li><i class="fas fa-check"></i> Revenue optimization</li>
+                            <li><i class="fas fa-check"></i> Performance analytics</li>
+                        </ul>
+                        <a href="/public/pages/contact.html" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // Load the header
+        fetch('/public/pages/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        // Load the footer
+        fetch('/public/pages/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 
